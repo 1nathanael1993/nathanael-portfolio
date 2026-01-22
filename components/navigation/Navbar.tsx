@@ -93,7 +93,7 @@ export default function Navbar() {
             onClick={() => scrollToSection("#social")}
             className="h-8 px-3 md:px-4 text-[9px] md:text-[10px] font-black uppercase tracking-tighter bg-white text-black hover:bg-neon-blue transition-all shrink-0"
           >
-            <span className="hidden md:inline">Let's Talk</span>
+            <span className="hidden md:inline">Let&apos;s Talk</span>
             <span className="md:hidden">Talk</span>
           </Button>
         </div>

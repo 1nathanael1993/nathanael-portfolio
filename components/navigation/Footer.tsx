@@ -20,7 +20,7 @@ export default function Footer() {
           className="mb-24"
         >
           <h2 className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter">
-            Let's Build <br />
+            Let&apos;s Build <br />
             <span className="bg-gradient-to-r from-neon-blue to-neon-violet bg-clip-text text-transparent">
               Something Together
             </span>

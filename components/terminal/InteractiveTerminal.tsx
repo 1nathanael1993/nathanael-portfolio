@@ -275,7 +275,7 @@ export default function InteractiveTerminal() {
                   )}
                   {currentInput === "" && !isTyping && (
                     <span className="text-white/20 absolute left-0 pointer-events-none">
-                      Type 'ls' to explore...
+                      Type &apos;ls&apos; to explore...
                     </span>
                   )}
                 </div>

@@ -40,7 +40,7 @@ export default function TechStackCloud() {
             Tech <span className="text-neon-blue">Stack</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Dominio de herramientas modernas para crear experiencias digitales de nivel 'Unicorn Startup'.
+            Dominio de herramientas modernas para crear experiencias digitales de nivel &apos;Unicorn Startup&apos;.
           </p>
         </motion.div>
 
@@ -99,7 +99,7 @@ function TechIcon({ tech, mousePos, containerRef }: { tech: any, mousePos: any, 
     } else {
       setOffset({ x: 0, y: 0 });
     }
-  }, [mousePos]);
+  }, [mousePos, containerRef]);
 
   return (
     <motion.div
