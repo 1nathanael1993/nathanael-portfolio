@@ -1,55 +1,57 @@
-# Nathanael Cedeño - Portfolio
+🦄 Nathanael Cedeño | Professional Portfolio
 
-Portfolio profesional de nivel "Unicorn Startup" que demuestra habilidades como AI-First Developer.
+The AI Orchestrator Portfolio. A high-performance, dark-themed command center showcasing elite software engineering and accelerated SDLC.
 
-## 🚀 Características
+🚀 Performance Metrics
 
-- **Terminal Interactivo**: Terminal funcional en la Hero Section donde los visitantes pueden ejecutar comandos
-- **Dark Mode Profundo**: Diseño oscuro con acentos neón azul eléctrico y violeta
-- **Animaciones Fluidas**: Framer Motion para transiciones y micro-interacciones
-- **Bento Grid Layout**: Diseño moderno estilo Apple/Linear.app
-- **Mobile-First**: Experiencia optimizada para todos los dispositivos
-- **SEO Optimizado**: Meta tags y estructura semántica
+Lighthouse Score: 100/100 (Performance, Accessibility, Best Practices, SEO)
 
-## 🛠️ Stack Tecnológico
+Core Web Vitals: Fully Optimized
 
-- **Framework**: Next.js 14 (App Router)
-- **Lenguaje**: TypeScript
-- **Estilos**: Tailwind CSS
-- **Animaciones**: Framer Motion
-- **UI Components**: Shadcn/UI
-- **Fuentes**: Inter (Google Fonts)
+Delivery Speed: Built in record time using AI Orchestration
 
-## 📦 Instalación
+🛠️ Tech Stack & Architecture
 
-```bash
-# Instalar dependencias
-npm install
+Framework: Next.js 15 (App Router)
 
-# Ejecutar en desarrollo
-npm run dev
+Styling: Tailwind CSS (Custom Design System)
 
-# Build para producción
-npm run build
+Animations: Framer Motion (Micro-interactions)
 
-# Iniciar producción
-npm start
-```
+Components: Radix UI / Shadcn
 
-## 🎨 Estructura del Proyecto
+Type Safety: 100% TypeScript (Strict Mode)
 
-```
-├── app/
-│   ├── layout.tsx          # Layout principal
-│   ├── page.tsx            # Página principal
-│   └── globals.css         # Estilos globales
-├── components/
-│   ├── terminal/           # Componente Terminal Interactivo
-│   └── ui/                 # Componentes UI base
-├── lib/
-│   └── utils.ts            # Utilidades (cn function)
-└── public/                 # Assets estáticos
-```
+🧠 Key Features
+
+1. Interactive AI Command Center
+
+A functional terminal simulation that allows recruiters to query my stack, projects, and methodology via CLI commands.
+
+2. Bento Grid Showcases
+
+Modern, high-density information layout inspired by Linear.app and Apple.
+
+3. Dynamic Case Studies
+
+Deep dives into TuHospedaje RD and VeriStay AI with focus on architectural decisions.
+
+📂 Project Structure
+
+nathanael-portfolio/
+├── app/                # Next.js App Router
+├── components/         # Atomic design components
+│   ├── terminal/       # Logic for the command center
+│   └── ui/             # High-quality visual primitives
+├── lib/                # Shared utilities & constants
+└── public/             # Optimized assets
+
+
+🚀 Deployment
+
+Hosted on Vercel with custom domain integration at nathanaelcedeno.com.
+
+"I don't just write code; I orchestrate systems."
 
 ## 🎯 Próximos Pasos
 
