@@ -40,14 +40,14 @@ export default function ProjectCard({ project, className, delay = 0 }: ProjectCa
         </div>
       </div>
       
-      <div className="relative z-10 p-8 h-full flex flex-col">
+      <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex flex-col">
         {/* Header */}
-        <div className="flex justify-between items-start mb-6">
-          <div>
-            <h3 className="text-3xl font-bold text-white group-hover:text-neon-blue transition-colors duration-300">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4 sm:mb-6">
+          <div className="min-w-0">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-neon-blue transition-colors duration-300 break-words">
               {project.title}
             </h3>
-            <p className="text-gray-400 mt-2 text-sm leading-relaxed max-w-sm">
+            <p className="text-gray-400 mt-2 text-sm leading-relaxed max-w-sm break-words">
               {project.description}
             </p>
           </div>
@@ -61,7 +61,7 @@ export default function ProjectCard({ project, className, delay = 0 }: ProjectCa
         </div>
 
         {/* Highlights/Features with Icons */}
-        <div className="grid grid-cols-1 gap-4 mb-8">
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 mb-6 sm:mb-8">
           {project.features.map((feature, idx) => {
             const Icon = iconMap[feature] || ShieldCheck;
             return (
@@ -78,7 +78,7 @@ export default function ProjectCard({ project, className, delay = 0 }: ProjectCa
         </div>
 
         {/* Stack Badges */}
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
           {project.technologies.map((tech) => (
             <span
               key={tech}
@@ -90,16 +90,18 @@ export default function ProjectCard({ project, className, delay = 0 }: ProjectCa
         </div>
 
         {/* Action Buttons */}
-        <div className="mt-auto flex gap-4">
+        <div className="mt-auto flex flex-col sm:flex-row gap-3 sm:gap-4">
           {project.liveUrl && (
             <Button
               variant="neon"
               size="sm"
+              asChild
               className="flex-1 bg-neon-blue/10 border-neon-blue/50 text-neon-blue hover:bg-neon-blue hover:text-black transition-all font-bold"
-              onClick={() => window.open(project.liveUrl, "_blank")}
             >
-              <ExternalLink className="w-4 h-4 mr-2" />
-              Ver Proyecto
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="w-4 h-4 mr-2" />
+                Ver Proyecto
+              </a>
             </Button>
           )}
           <Button

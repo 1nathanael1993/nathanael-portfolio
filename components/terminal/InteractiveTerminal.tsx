@@ -9,27 +9,31 @@ interface Command {
   timestamp: number;
 }
 
+const projectsOutput = () => [
+  "📁 Projects:",
+  "",
+  "  🏠 TuHospedajeRD.com",
+  "     └─ Platform: Next.js | Supabase | Real-time",
+  "",
+  "  🤖 VeriStay AI",
+  "     └─ Platform: Next.js | Gemini AI | PWA",
+  "",
+  "  💡 More projects available on GitHub",
+  "",
+];
+
 const commands: Record<string, () => string[]> = {
+  ls: projectsOutput,
+  "ls projects": projectsOutput,
   help: () => [
     "Available commands:",
+    "  ls             - List my featured projects (or use ls projects)",
     "  ls projects    - List my featured projects",
     "  cat bio        - Display my biography",
     "  cat skills     - Show technical skills",
     "  cat contact    - Display contact information",
     "  clear          - Clear terminal",
     "  whoami         - Display developer info",
-    "",
-  ],
-  "ls projects": () => [
-    "📁 Projects:",
-    "",
-    "  🏠 TuHospedajeRD.com",
-    "     └─ Platform: Next.js | Supabase | Real-time",
-    "",
-    "  🤖 VeriStay AI",
-    "     └─ Platform: Next.js | Gemini AI | PWA",
-    "",
-    "  💡 More projects available on GitHub",
     "",
   ],
   "cat bio": () => [
@@ -73,9 +77,9 @@ const commands: Record<string, () => string[]> = {
     "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
     "",
     "🌐 Portfolio: You're already here!",
-    "📧 Email: [Your email]",
-    "💼 LinkedIn: [Your LinkedIn]",
-    "🐙 GitHub: [Your GitHub]",
+    "📧 Email: eipelnatacedeno@gmail.com",
+    "💼 LinkedIn: linkedin.com/in/nathanaelcedeno",
+    "🐙 GitHub: github.com/1nathanael1993",
     "",
   ],
   whoami: () => [
@@ -213,19 +217,19 @@ export default function InteractiveTerminal() {
         
         <div className="relative">
           <div className="absolute -inset-[1px] bg-gradient-to-r from-neon-blue/30 via-white/10 to-neon-violet/30 rounded-lg opacity-50" />
-          <div className="bg-black/40 backdrop-blur-[12px] rounded-lg p-6 h-[500px] flex flex-col border border-white/5 shadow-2xl relative overflow-hidden">
+          <div className="bg-black/40 backdrop-blur-[12px] rounded-lg p-4 sm:p-6 h-[360px] sm:h-[420px] md:h-[500px] flex flex-col border border-white/5 shadow-2xl relative overflow-hidden">
             {/* Glossy reflection effect */}
             <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
             
             {/* Terminal Header */}
-            <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/5">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500/80 shadow-[0_0_10px_rgba(239,68,68,0.3)]"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80 shadow-[0_0_10px_rgba(234,179,8,0.3)]"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500/80 shadow-[0_0_10px_rgba(34,197,94,0.3)]"></div>
+            <div className="flex items-center gap-2 mb-3 sm:mb-4 pb-2 sm:pb-3 border-b border-white/5 min-w-0">
+              <div className="flex gap-1.5 sm:gap-2 shrink-0">
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500/80 shadow-[0_0_10px_rgba(239,68,68,0.3)]" />
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/80 shadow-[0_0_10px_rgba(234,179,8,0.3)]" />
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500/80 shadow-[0_0_10px_rgba(34,197,94,0.3)]" />
               </div>
-              <span className="ml-4 text-[10px] text-gray-500 font-mono tracking-widest uppercase">
-                Terminal — nathanael@portfolio
+              <span className="ml-2 sm:ml-4 text-[9px] sm:text-[10px] text-gray-500 font-mono tracking-widest uppercase truncate">
+                nathanael@portfolio
               </span>
             </div>
 
@@ -233,7 +237,7 @@ export default function InteractiveTerminal() {
             <div
               ref={terminalRef}
               onClick={() => inputRef.current?.focus()}
-              className="flex-1 overflow-y-auto font-mono text-sm space-y-3 scrollbar-none pr-2 cursor-text"
+              className="flex-1 overflow-y-auto font-mono text-xs sm:text-sm space-y-2 sm:space-y-3 scrollbar-hide pr-2 cursor-text"
             >
               <AnimatePresence mode="popLayout">
                 {commandHistory.map((cmd, idx) => (
@@ -275,7 +279,9 @@ export default function InteractiveTerminal() {
                   )}
                   {currentInput === "" && !isTyping && (
                     <span className="text-white/20 absolute left-0 pointer-events-none">
-                      Type &apos;ls&apos; to explore...
+                      {commandHistory.length <= 1
+                        ? "Type 'ls' to explore..."
+                        : "Type 'help' for more commands"}
                     </span>
                   )}
                 </div>

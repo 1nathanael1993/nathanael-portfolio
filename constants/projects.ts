@@ -29,5 +29,6 @@ export const projects: Project[] = [
       "Offline Ready (PWA)",
     ],
     category: "ai",
+    liveUrl: "https://veristay.tuhospedajerd.com",
   },
 ];

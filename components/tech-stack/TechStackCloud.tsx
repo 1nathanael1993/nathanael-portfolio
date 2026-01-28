@@ -28,18 +28,18 @@ export default function TechStackCloud() {
   };
 
   return (
-    <section id="tech-stack" className="relative py-32 px-4 overflow-hidden bg-black">
+    <section id="tech-stack" className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 overflow-hidden bg-black">
       <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4 sm:mb-6">
             Tech <span className="text-neon-blue">Stack</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">
             Dominio de herramientas modernas para crear experiencias digitales de nivel &apos;Unicorn Startup&apos;.
           </p>
         </motion.div>
@@ -47,7 +47,7 @@ export default function TechStackCloud() {
         <div 
           ref={containerRef}
           onMouseMove={handleMouseMove}
-          className="relative h-[400px] w-full flex items-center justify-center bg-white/[0.02] border border-white/5 rounded-3xl overflow-hidden cursor-none"
+          className="relative min-h-[320px] sm:min-h-[360px] md:min-h-[400px] w-full flex items-center justify-center bg-white/[0.02] border border-white/5 rounded-2xl sm:rounded-3xl overflow-hidden md:cursor-none"
         >
           {/* Custom Cursor */}
           <motion.div 
@@ -55,7 +55,7 @@ export default function TechStackCloud() {
             className="absolute top-0 left-0 w-[200px] h-[200px] bg-neon-blue/10 blur-[80px] rounded-full pointer-events-none"
           />
 
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 p-8">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-16 p-4 sm:p-6 md:p-8">
             {techList.map((tech, idx) => (
               <TechIcon 
                 key={tech.name} 
