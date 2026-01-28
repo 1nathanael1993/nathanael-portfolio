@@ -38,14 +38,14 @@ export default function BentoGrid() {
           {/* TuHospedajeRD - The Large Hero Project */}
           <ProjectCard 
             project={projects[0]} 
-            className="lg:col-span-7 lg:min-h-[600px]" 
+            className="lg:col-span-7" 
             delay={0.1}
           />
           
           {/* VeriStay AI - The High Tech Side Project */}
           <ProjectCard 
             project={projects[1]} 
-            className="lg:col-span-5 lg:min-h-[600px]" 
+            className="lg:col-span-5" 
             delay={0.3}
           />
 

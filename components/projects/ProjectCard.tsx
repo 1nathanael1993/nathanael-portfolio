@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Project } from "@/types";
-import { ExternalLink, Github, CreditCard, RefreshCw, MessageSquare, ShieldCheck, Brain, FileText } from "lucide-react";
+import { ExternalLink, CreditCard, RefreshCw, MessageSquare, ShieldCheck, Brain, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 interface ProjectCardProps {
   project: Project;
@@ -39,8 +40,23 @@ export default function ProjectCard({ project, className, delay = 0 }: ProjectCa
           </div>
         </div>
       </div>
+
+      {/* Optional project screenshot (e.g. TuHospedajeRD) */}
+      {project.imageUrl && (
+        <div className="relative z-10 w-full aspect-video overflow-hidden rounded-t-2xl">
+          <Image
+            src={project.imageUrl}
+            alt={`${project.title} screenshot`}
+            fill
+            priority={project.id === "tuhospedajerd"}
+            sizes="(max-width: 768px) 100vw, 600px"
+            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+        </div>
+      )}
       
-      <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex flex-col">
+      <div className="relative z-10 p-5 sm:p-6 md:p-8 flex flex-col">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4 sm:mb-6">
           <div className="min-w-0">
@@ -89,30 +105,22 @@ export default function ProjectCard({ project, className, delay = 0 }: ProjectCa
           ))}
         </div>
 
-        {/* Action Buttons */}
-        <div className="mt-auto flex flex-col sm:flex-row gap-3 sm:gap-4">
-          {project.liveUrl && (
+        {/* Action: Ver Proyecto (full width) */}
+        {project.liveUrl && (
+          <div className="mt-2 sm:mt-4">
             <Button
               variant="neon"
               size="sm"
               asChild
-              className="flex-1 bg-neon-blue/10 border-neon-blue/50 text-neon-blue hover:bg-neon-blue hover:text-black transition-all font-bold"
+              className="w-full justify-center bg-neon-blue/10 border-neon-blue/50 text-neon-blue hover:bg-neon-blue hover:text-black transition-all font-bold py-3"
             >
               <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="w-4 h-4 mr-2" />
                 Ver Proyecto
               </a>
             </Button>
-          )}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="flex-1 border border-white/10 text-white hover:bg-white/5 transition-all font-medium"
-          >
-            <Github className="w-4 h-4 mr-2" />
-            Code
-          </Button>
-        </div>
+          </div>
+        )}
       </div>
 
       {/* Glass Reflection */}

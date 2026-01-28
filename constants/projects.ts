@@ -6,6 +6,7 @@ export const projects: Project[] = [
     title: "TuHospedajeRD",
     description: "Solución completa para anfitriones locales con notificaciones push y diseño responsive.",
     longDescription: "TuHospedajeRD es una plataforma real de reservas tipo Airbnb diseñada específicamente para el mercado dominicano. Ofrece una experiencia fluida tanto para huéspedes como para anfitriones.",
+    imageUrl: "/images/projects/tuhospedaje-property.jpg",
     technologies: ["Next.js", "Supabase", "PayPal API", "Tailwind CSS"],
     features: [
       "Pagos seguros con PayPal",
