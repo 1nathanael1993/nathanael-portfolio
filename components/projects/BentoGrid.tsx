@@ -33,19 +33,17 @@ export default function BentoGrid() {
           </h2>
         </motion.div>
 
-        {/* Asymmetric Bento Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* TuHospedajeRD - The Large Hero Project */}
+        {/* Symmetric Grid - Same width for both cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+          {/* TuHospedajeRD */}
           <ProjectCard 
             project={projects[0]} 
-            className="lg:col-span-7" 
             delay={0.1}
           />
           
-          {/* VeriStay AI - The High Tech Side Project */}
+          {/* VeriStay AI */}
           <ProjectCard 
             project={projects[1]} 
-            className="lg:col-span-5" 
             delay={0.3}
           />
 
@@ -55,7 +53,7 @@ export default function BentoGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="lg:col-span-12 group relative rounded-2xl overflow-hidden bg-gradient-to-r from-neon-blue/10 to-neon-violet/10 border border-white/5 p-6 sm:p-8 md:p-12 text-center"
+            className="md:col-span-2 group relative rounded-2xl overflow-hidden bg-gradient-to-r from-neon-blue/10 to-neon-violet/10 border border-white/5 p-6 sm:p-8 md:p-12 text-center"
           >
             <div className="absolute inset-0 bg-black/40 backdrop-blur-xl -z-10" />
             <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-white">¿Tienes un proyecto en mente?</h3>

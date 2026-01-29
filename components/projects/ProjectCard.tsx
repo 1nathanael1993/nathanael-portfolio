@@ -17,6 +17,11 @@ const iconMap: Record<string, any> = {
   "Sincronización automática iCal": RefreshCw,
   "Chat en tiempo real integrado": MessageSquare,
   "Panel de Administración Pro": ShieldCheck,
+  "Detección de Daños con IA": Brain,
+  "Reportes Legales Automatizados": FileText,
+  "Motor de Comparación de Imágenes": Brain,
+  "Listo para Offline (PWA)": ShieldCheck,
+  // English fallbacks (if any remain)
   "AI Damage Detection": Brain,
   "Automated Legal Reports": FileText,
   "Image Comparison Engine": Brain,
@@ -30,7 +35,7 @@ export default function ProjectCard({ project, className, delay = 0 }: ProjectCa
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, delay, ease: [0.23, 1, 0.32, 1] }}
-      className={`group relative rounded-2xl overflow-hidden bg-black/40 backdrop-blur-md border border-white/10 hover:border-neon-blue/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(0,240,255,0.15)] ${className}`}
+      className={`group relative h-full flex flex-col rounded-2xl overflow-hidden bg-black/40 backdrop-blur-md border border-white/10 hover:border-neon-blue/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(0,240,255,0.15)] ${className}`}
     >
       {/* Border Beam Effect */}
       <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -43,20 +48,20 @@ export default function ProjectCard({ project, className, delay = 0 }: ProjectCa
 
       {/* Optional project screenshot (e.g. TuHospedajeRD) */}
       {project.imageUrl && (
-        <div className="relative z-10 w-full aspect-video overflow-hidden rounded-t-2xl">
+        <div className="relative z-10 w-full h-64 sm:h-72 overflow-hidden rounded-t-2xl shrink-0">
           <Image
             src={project.imageUrl}
             alt={`${project.title} screenshot`}
             fill
             priority={project.id === "tuhospedajerd"}
             sizes="(max-width: 768px) 100vw, 600px"
-            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+            className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
         </div>
       )}
       
-      <div className="relative z-10 p-5 sm:p-6 md:p-8 flex flex-col">
+      <div className="relative z-10 p-5 sm:p-6 md:p-8 flex flex-col flex-1 min-h-0">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4 sm:mb-6">
           <div className="min-w-0">
@@ -105,9 +110,9 @@ export default function ProjectCard({ project, className, delay = 0 }: ProjectCa
           ))}
         </div>
 
-        {/* Action: Ver Proyecto (full width) */}
+        {/* Action: Ver Proyecto (full width) - Always at bottom */}
         {project.liveUrl && (
-          <div className="mt-2 sm:mt-4">
+          <div className="mt-auto pt-4">
             <Button
               variant="neon"
               size="sm"

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import InteractiveTerminal from "@/components/terminal/InteractiveTerminal";
 import BentoGrid from "@/components/projects/BentoGrid";
 import AILab from "@/components/ai-lab/AILab";
@@ -11,6 +12,14 @@ import SpotlightBackground from "@/components/visuals/SpotlightBackground";
 import { motion } from "framer-motion";
 
 export default function Home() {
+  // Forzar scroll al inicio al cargar/recargar la página
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    // También desactivar scroll restoration del navegador
+    if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+  }, []);
   return (
     <main className="min-h-screen bg-black text-white selection:bg-neon-blue/30 overflow-x-hidden">
       <SpotlightBackground />
