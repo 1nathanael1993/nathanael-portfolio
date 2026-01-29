@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Footer() {
   return (
-    <footer className="relative pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-14 md:pb-16 px-4 sm:px-6 bg-black overflow-hidden">
+    <footer className="relative pt-16 sm:pt-20 md:pt-24 pb-10 sm:pb-12 md:pb-14 px-4 sm:px-6 bg-black overflow-hidden">
       {/* Background Glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[300px] bg-neon-blue/10 blur-[120px] rounded-full -z-10" />
 
@@ -19,14 +19,14 @@ export default function Footer() {
           transition={{ duration: 0.8 }}
           className="mb-16 sm:mb-20 md:mb-24"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-6 sm:mb-8 md:mb-10 tracking-tighter">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-5 sm:mb-6 md:mb-8 tracking-tighter">
             Let&apos;s Build <br />
             <span className="bg-gradient-to-r from-neon-blue to-neon-violet bg-clip-text text-transparent">
               Something Together
             </span>
           </h2>
           <Button 
-            className="h-14 sm:h-16 md:h-20 px-6 sm:px-8 md:px-12 rounded-xl sm:rounded-2xl bg-white text-black font-black text-base sm:text-lg md:text-xl hover:bg-neon-blue hover:shadow-[0_0_50px_rgba(0,240,255,0.5)] transition-all duration-500 hover:scale-105"
+            className="h-12 sm:h-14 md:h-16 px-5 sm:px-6 md:px-10 rounded-xl sm:rounded-2xl bg-white text-black font-black text-sm sm:text-base md:text-lg hover:bg-neon-blue hover:shadow-[0_0_50px_rgba(0,240,255,0.5)] transition-all duration-500 hover:scale-105"
           >
             Contact me now
           </Button>

@@ -5,7 +5,7 @@ import { Youtube, Music, ArrowUpRight } from "lucide-react";
 
 export default function SocialMedia() {
   return (
-    <section id="social" className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 overflow-hidden bg-black">
+    <section id="social" className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 overflow-hidden bg-black">
       <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -13,7 +13,7 @@ export default function SocialMedia() {
           viewport={{ once: true }}
           className="mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 sm:mb-6">
             Content & <span className="text-neon-violet">Community</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl">

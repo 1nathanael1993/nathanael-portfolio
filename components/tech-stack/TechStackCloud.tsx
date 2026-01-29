@@ -28,7 +28,7 @@ export default function TechStackCloud() {
   };
 
   return (
-    <section id="tech-stack" className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 overflow-hidden bg-black">
+    <section id="tech-stack" className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 overflow-hidden bg-black">
       <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ export default function TechStackCloud() {
           viewport={{ once: true }}
           className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 sm:mb-6">
             Tech <span className="text-neon-blue">Stack</span>
           </h2>
           <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">

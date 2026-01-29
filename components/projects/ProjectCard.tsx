@@ -61,11 +61,11 @@ export default function ProjectCard({ project, className, delay = 0 }: ProjectCa
         </div>
       )}
       
-      <div className="relative z-10 p-5 sm:p-6 md:p-8 flex flex-col flex-1 min-h-0">
+      <div className="relative z-10 p-4 sm:p-5 md:p-6 flex flex-col flex-1 min-h-0">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4 sm:mb-6">
           <div className="min-w-0">
-            <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-neon-blue transition-colors duration-300 break-words">
+            <h3 className="text-xl sm:text-2xl md:text-2xl font-bold text-white group-hover:text-neon-blue transition-colors duration-300 break-words">
               {project.title}
             </h3>
             <p className="text-gray-400 mt-2 text-sm leading-relaxed max-w-sm break-words">

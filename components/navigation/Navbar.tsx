@@ -51,7 +51,7 @@ export default function Navbar() {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          className="bg-black/40 backdrop-blur-[20px] border border-white/10 rounded-full px-4 md:px-6 py-2 md:py-3 flex items-center justify-between gap-2 md:gap-8 shadow-2xl relative overflow-hidden group min-w-0"
+          className="bg-black/40 backdrop-blur-[20px] border border-white/10 rounded-full px-3 md:px-5 py-1.5 md:py-2 flex items-center justify-between gap-2 md:gap-6 shadow-2xl relative overflow-hidden group min-w-0"
         >
           {/* Interior Glow */}
           <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/5 via-transparent to-neon-violet/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

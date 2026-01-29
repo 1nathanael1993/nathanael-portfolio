@@ -52,7 +52,7 @@ export default function Home() {
               />
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-8xl font-black mb-0 tracking-tighter break-words">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-black mb-0 tracking-tighter break-words">
               <span className="bg-gradient-to-r from-neon-blue via-neon-violet to-neon-blue bg-[length:200%_auto] animate-gradient bg-clip-text text-transparent">
                 Nathanael Cedeño: Orchestrating the Future
               </span>

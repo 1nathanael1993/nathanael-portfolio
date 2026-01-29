@@ -8,7 +8,7 @@ export default function AILab() {
   const containerRef = useRef<HTMLDivElement>(null);
   
   return (
-    <section id="ai-lab" className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 overflow-hidden bg-black">
+    <section id="ai-lab" className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 overflow-hidden bg-black">
       {/* Grid Pattern with fading edges */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_20%,transparent_100%)]" />
 
@@ -25,7 +25,7 @@ export default function AILab() {
             <Sparkles className="w-4 h-4 text-neon-violet" />
             <span className="text-xs font-bold text-neon-violet uppercase tracking-widest">Advantage</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 sm:mb-6">
             The <span className="bg-gradient-to-r from-neon-violet to-purple-400 bg-clip-text text-transparent">AI Lab</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto px-0">

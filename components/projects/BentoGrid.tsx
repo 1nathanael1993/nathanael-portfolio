@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function BentoGrid() {
   return (
-    <section id="projects" className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 overflow-hidden bg-black">
+    <section id="projects" className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 overflow-hidden bg-black">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-blue/5 blur-[120px] rounded-full" />
@@ -28,7 +28,7 @@ export default function BentoGrid() {
               Portfolio
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tight">
             Featured <span className="bg-gradient-to-r from-neon-blue to-neon-violet bg-clip-text text-transparent">Projects</span>
           </h2>
         </motion.div>
@@ -53,10 +53,10 @@ export default function BentoGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="md:col-span-2 group relative rounded-2xl overflow-hidden bg-gradient-to-r from-neon-blue/10 to-neon-violet/10 border border-white/5 p-6 sm:p-8 md:p-12 text-center"
+            className="md:col-span-2 group relative rounded-2xl overflow-hidden bg-gradient-to-r from-neon-blue/10 to-neon-violet/10 border border-white/5 p-5 sm:p-6 md:p-10 text-center"
           >
             <div className="absolute inset-0 bg-black/40 backdrop-blur-xl -z-10" />
-            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-white">¿Tienes un proyecto en mente?</h3>
+            <h3 className="text-xl sm:text-2xl md:text-2xl font-bold mb-2 sm:mb-3 text-white">¿Tienes un proyecto en mente?</h3>
             <p className="text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto text-base sm:text-lg">
               Estoy siempre abierto a nuevas oportunidades y colaboraciones en el desarrollo de software orquestado por IA.
             </p>
