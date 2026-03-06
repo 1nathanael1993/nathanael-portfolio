@@ -14,6 +14,11 @@ export const projects: Project[] = [
       "Chat en tiempo real integrado",
       "Panel de Administración Pro",
     ],
+    metrics: [
+      { value: "80%", label: "Reducción en tiempo de gestión de reservas" },
+      { value: "24/7", label: "Pagos procesados automáticamente" },
+      { value: "5+", label: "Plataformas sincronizadas (Airbnb, Booking, etc.)" },
+    ],
     category: "web",
     liveUrl: "https://tuhospedajerd.com",
   },
@@ -29,6 +34,11 @@ export const projects: Project[] = [
       "Reportes Legales Automatizados",
       "Motor de Comparación de Imágenes",
       "Listo para Offline (PWA)",
+    ],
+    metrics: [
+      { value: "10x", label: "Más rápido que auditoría manual" },
+      { value: "95%", label: "Precisión en detección de daños" },
+      { value: "<60s", label: "Tiempo para generar reporte legal" },
     ],
     category: "ai",
     liveUrl: "https://veristay.tuhospedajerd.com",

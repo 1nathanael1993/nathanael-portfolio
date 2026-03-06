@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Footer() {
   return (
-    <footer className="relative pt-16 sm:pt-20 md:pt-24 pb-10 sm:pb-12 md:pb-14 px-4 sm:px-6 bg-black overflow-hidden">
+    <footer id="contact" className="relative pt-16 sm:pt-20 md:pt-24 pb-10 sm:pb-12 md:pb-14 px-4 sm:px-6 bg-black overflow-hidden">
       {/* Background Glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[300px] bg-neon-blue/10 blur-[120px] rounded-full -z-10" />
 

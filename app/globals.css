@@ -16,6 +16,17 @@
   * {
     @apply border-border;
   }
+  html {
+    font-size: 100%;
+  }
+  @media (min-width: 1024px) {
+    html {
+      /* Reduce ~15% en desktop: 16px -> 13.6px
+         Esto hace que todo (títulos, textos, paddings en rem)
+         se vea más parecido a tu zoom ~90%, pero estando al 100%. */
+      font-size: 85%;
+    }
+  }
   body {
     @apply bg-black text-white antialiased relative;
     font-feature-settings: "rlig" 1, "calt" 1;

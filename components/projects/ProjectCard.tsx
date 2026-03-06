@@ -82,7 +82,7 @@ export default function ProjectCard({ project, className, delay = 0 }: ProjectCa
         </div>
 
         {/* Highlights/Features with Icons */}
-        <div className="grid grid-cols-1 gap-3 sm:gap-4 mb-6 sm:mb-8">
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 mb-7 sm:mb-9">
           {project.features.map((feature, idx) => {
             const Icon = iconMap[feature] || ShieldCheck;
             return (
@@ -98,8 +98,32 @@ export default function ProjectCard({ project, className, delay = 0 }: ProjectCa
           })}
         </div>
 
+        {/* Impact / Key Results */}
+        {project.metrics && project.metrics.length > 0 && (
+          <div className="mt-2 pt-5 border-t border-white/10 mb-7 sm:mb-9">
+            <div className="grid grid-cols-3 gap-3 sm:gap-4">
+              {project.metrics.slice(0, 3).map((m, idx) => {
+                const valueClass =
+                  project.category === "ai"
+                    ? "text-neon-violet"
+                    : "text-neon-blue";
+                return (
+                  <div key={`${m.value}-${idx}`} className="min-w-0">
+                    <div className={`text-2xl sm:text-3xl font-black tracking-tight ${valueClass}`}>
+                      {m.value}
+                    </div>
+                    <div className="mt-1 text-[10px] sm:text-xs text-gray-400 uppercase tracking-widest leading-snug">
+                      {m.label}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
         {/* Stack Badges */}
-        <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
+        <div className="flex flex-wrap gap-2 mb-7 sm:mb-9">
           {project.technologies.map((tech) => (
             <span
               key={tech}

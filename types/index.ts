@@ -5,6 +5,10 @@ export interface Project {
   longDescription: string;
   technologies: string[];
   features: string[];
+  metrics?: Array<{
+    value: string;
+    label: string;
+  }>;
   imageUrl?: string;
   logoUrl?: string;
   liveUrl?: string;

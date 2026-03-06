@@ -10,7 +10,6 @@ const navItems = [
   { label: "Proyectos", href: "#projects" },
   { label: "AI Lab", href: "#ai-lab" },
   { label: "Tech Stack", href: "#tech-stack" },
-  { label: "Social", href: "#social" },
 ];
 
 export default function Navbar() {
@@ -111,7 +110,7 @@ export default function Navbar() {
             <Button
               variant="neon"
               size="sm"
-              onClick={() => scrollToSection("#social")}
+              onClick={() => scrollToSection("#contact")}
               className="h-8 px-3 md:px-4 text-[9px] md:text-[10px] font-black uppercase tracking-tighter bg-white text-black hover:bg-neon-blue transition-all"
             >
               <span className="hidden md:inline">Let&apos;s Talk</span>

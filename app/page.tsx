@@ -3,8 +3,8 @@
 import { useEffect } from "react";
 import InteractiveTerminal from "@/components/terminal/InteractiveTerminal";
 import BentoGrid from "@/components/projects/BentoGrid";
+import AboutMe from "@/components/about/AboutMe";
 import AILab from "@/components/ai-lab/AILab";
-import SocialMedia from "@/components/social/SocialMedia";
 import TechStackCloud from "@/components/tech-stack/TechStackCloud";
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/navigation/Footer";
@@ -84,6 +84,9 @@ export default function Home() {
       {/* Projects Section — inmediatamente después del Hero, visible con scroll mínimo */}
       <BentoGrid />
 
+      {/* About Me — human, professional, close */}
+      <AboutMe />
+
       {/* Terminal — después de Proyectos para no retrasar la vista de los proyectos */}
       <section id="terminal" className="relative py-12 sm:py-16 md:py-20 px-4 overflow-hidden">
         <div className="relative z-10 w-full max-w-7xl mx-auto">
@@ -103,9 +106,6 @@ export default function Home() {
 
       {/* Tech Stack Section */}
       <TechStackCloud />
-
-      {/* Social Media Section */}
-      <SocialMedia />
 
       {/* Footer & Contact */}
       <Footer />
