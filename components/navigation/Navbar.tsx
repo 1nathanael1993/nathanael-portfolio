@@ -6,10 +6,10 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
-  { label: "Inicio", href: "#hero" },
-  { label: "Proyectos", href: "#projects" },
-  { label: "AI Lab", href: "#ai-lab" },
-  { label: "Tech Stack", href: "#tech-stack" },
+  { label: "HOME", href: "#hero" },
+  { label: "PROJECTS", href: "#projects" },
+  { label: "AI LAB", href: "#ai-lab" },
+  { label: "TECH STACK", href: "#tech-stack" },
 ];
 
 export default function Navbar() {
@@ -45,80 +45,66 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] md:w-fit max-w-4xl px-2">
+      <div className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] md:w-fit max-w-5xl px-2">
         <motion.nav
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          className="bg-black/40 backdrop-blur-[20px] border border-white/10 rounded-full px-3 md:px-5 py-1.5 md:py-2 flex items-center justify-between gap-2 md:gap-6 shadow-2xl relative overflow-hidden group min-w-0"
+          className="bg-black/60 backdrop-blur-xl border border-white/10 rounded-full px-4 md:px-6 py-2 flex items-center justify-between gap-4 md:gap-8 shadow-2xl relative overflow-hidden group"
         >
           {/* Interior Glow */}
           <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/5 via-transparent to-neon-violet/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-          {/* Desktop: enlaces visibles | Mobile: botón menú */}
-          <div className="flex items-center gap-3 md:gap-6 relative z-10 min-w-0 flex-1 md:flex-initial">
-            {/* Hamburger solo móvil */}
+          {/* Desktop: links | Mobile: menu button */}
+          <div className="flex items-center gap-4 md:gap-8 relative z-10">
             <button
               type="button"
               aria-label="Abrir menú"
               onClick={() => setIsMobileMenuOpen(true)}
-              className="md:hidden p-2 -ml-1 rounded-full text-gray-400 hover:text-white hover:bg-white/5 transition-colors shrink-0"
+              className="md:hidden p-2 rounded-full text-gray-400 hover:text-white transition-colors"
             >
               <Menu className="w-5 h-5" />
             </button>
-            {/* Links solo desktop */}
-            <div className="hidden md:flex items-center gap-6">
+
+            <div className="hidden md:flex items-center gap-8">
               {navItems.map((item) => (
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-xs font-bold text-gray-400 hover:text-white uppercase tracking-widest transition-all duration-300 hover:scale-105 whitespace-nowrap"
+                  className="text-[10px] font-black text-gray-400 hover:text-white uppercase tracking-[0.2em] transition-all duration-300"
                 >
-                  {item.label === "Inicio" ? "Home" : item.label}
+                  {item.label}
                 </button>
               ))}
             </div>
           </div>
 
-          <div className="hidden md:block w-[1px] h-4 bg-white/10 mx-1 shrink-0" />
+          {/* Separator seen in the image */}
+          <div className="hidden md:block w-[1px] h-4 bg-white/20 mx-2 shrink-0" />
 
-          <div className="flex items-center gap-2 relative z-10 shrink-0">
+          <div className="flex items-center gap-3 relative z-10 shrink-0">
             <motion.a
               href="/cv.pdf"
               download
-              className="relative overflow-hidden group/cv px-3 md:px-4 py-1.5 rounded-full border border-neon-blue/30 bg-neon-blue/5 flex items-center gap-2 transition-all duration-300 hover:border-neon-blue/80 hover:bg-neon-blue/10"
+              className="px-4 py-1.5 rounded-full border border-neon-blue/40 bg-transparent flex items-center justify-center transition-all duration-300 hover:bg-neon-blue/10"
             >
-              <span className="text-[9px] md:text-[10px] font-black text-neon-blue uppercase tracking-tighter relative z-10 group-hover/cv:text-white transition-colors duration-300 whitespace-nowrap">
+              <span className="text-[10px] font-black text-neon-blue uppercase tracking-tighter">
                 CV
               </span>
-              <div className="absolute inset-0 z-0 pointer-events-none">
-                <motion.div
-                  initial={{ x: "-150%" }}
-                  whileHover={{ x: "150%" }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[35deg]"
-                />
-                <motion.div
-                  initial={{ x: "-150%" }}
-                  whileHover={{ x: "150%" }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className="absolute inset-y-0 w-[4px] bg-neon-blue shadow-[0_0_20px_#00F0FF] skew-x-[35deg]"
-                />
-              </div>
             </motion.a>
 
             <Button
               variant="neon"
               size="sm"
               onClick={() => scrollToSection("#contact")}
-              className="h-8 px-3 md:px-4 text-[9px] md:text-[10px] font-black uppercase tracking-tighter bg-white text-black hover:bg-neon-blue transition-all"
+              className="h-8 px-4 md:px-6 text-[10px] font-black uppercase tracking-tighter bg-white text-black hover:bg-gray-200 transition-all rounded-full"
             >
-              <span className="hidden md:inline">Let&apos;s Talk</span>
-              <span className="md:hidden">Talk</span>
+              LET&apos;S TALK
             </Button>
           </div>
         </motion.nav>
       </div>
+
 
       {/* Overlay + menú móvil */}
       <AnimatePresence>

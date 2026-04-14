@@ -11,7 +11,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Nathanael Cedeño | AI-First Full Stack Developer",
   description: "Orchestrating the Future through AI-Augmented Development. Junior Full Stack Developer & AI Orchestrator based in Santo Domingo.",
-  keywords: ["Nathanael Cedeño", "AI Developer", "Full Stack Developer", "Next.js", "TypeScript", "Dominican Republic", "Cursor AI", "Prompt Engineering"],
+  keywords: ["Nathanael Cedeño", "AI Developer", "Full Stack Developer", "Next.js", "TypeScript", "Dominican Republic", "AI-Augmented Development", "Prompt Engineering"],
   authors: [{ name: "Nathanael Cedeño" }],
   openGraph: {
     title: "Nathanael Cedeño | AI-First Developer",
@@ -47,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={inter.variable}>
+    <html lang="en" className={inter.variable}>
       <body className={inter.className}>{children}</body>
     </html>
   );

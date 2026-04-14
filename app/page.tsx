@@ -26,7 +26,7 @@ export default function Home() {
       <Navbar />
       
       {/* Hero Section — compacto: solo título y badge para que Proyectos quede visible con poco scroll */}
-      <section id="hero" className="relative min-h-[85vh] sm:min-h-[80vh] flex flex-col items-center justify-center px-4 pt-28 sm:pt-32 pb-12 sm:pb-16 overflow-hidden">
+      <section id="hero" className="relative min-h-[75vh] sm:min-h-[80vh] flex flex-col items-center justify-center px-4 pt-24 sm:pt-32 pb-8 sm:pb-16 overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,240,255,0.1),transparent_50%)]"></div>
@@ -43,7 +43,7 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neon-blue/30 bg-neon-blue/5 backdrop-blur-sm mb-6 sm:mb-8 group cursor-pointer relative overflow-hidden">
               <span className="text-sm text-neon-blue">⚡</span>
               <span className="text-xs md:text-sm font-medium tracking-wide uppercase">
-                10x Productivity through AI-Collaboration
+                Full-Stack & AI Automation Specialist
               </span>
               <motion.div
                 animate={{ top: ["-100%", "200%"] }}
@@ -52,9 +52,9 @@ export default function Home() {
               />
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-black mb-0 tracking-tighter break-words">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-black mb-0 tracking-tighter break-words leading-[1.1]">
               <span className="bg-gradient-to-r from-neon-blue via-neon-violet to-neon-blue bg-[length:200%_auto] animate-gradient bg-clip-text text-transparent">
-                Nathanael Cedeño: Orchestrating the Future
+                Full-Stack Developer specialized in Automation & AI. Building products that drive real business ROI.
               </span>
             </h1>
           </motion.div>

@@ -25,48 +25,63 @@ export default function AboutMe() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-violet/25 bg-neon-violet/5 mb-5">
             <Sparkles className="w-4 h-4 text-neon-violet" />
             <span className="text-[10px] sm:text-xs font-bold text-neon-violet uppercase tracking-widest">
-              MI HISTORIA
+              MY STORY
             </span>
           </div>
 
           {/* Title */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-white">
-            Construyo el futuro del{" "}
+            Architecting the future of{" "}
             <span className="bg-gradient-to-r from-neon-blue to-neon-violet bg-clip-text text-transparent">
-              hospitality con IA
+              Hospitality through AI
             </span>
           </h2>
 
           {/* Copy */}
           <div className="mt-5 space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed">
             <p>
-              Empecé con TuHospedajeRD para ayudar a anfitriones locales a gestionar sus propiedades sin
-              complicaciones. Vi de cerca el dolor de las auditorías manuales y los conflictos por daños no
-              documentados.
+              My journey began in high-stakes operations. Managing large-scale hospitality portfolios as an 
+              <span className="text-white font-medium"> Airbnb Administrator</span> gave me deep domain expertise, 
+              while my tenure as a <span className="text-white font-medium">Data Specialist at Conduent</span> 
+              (US-based market) sharpened my precision and efficiency in high-pressure corporate environments.
             </p>
             <p>
-              Eso me llevó a crear VeriStay AI, usando Google Gemini para automatizar auditorías forenses. Ahora
-              combino ambas soluciones para ofrecer el stack completo: gestión + auditoría inteligente.
+              Witnessing the manual friction in these industries firsthand drove me to found TuHospedajeRD 
+              and later <span className="text-neon-blue font-semibold">VeriStay AI</span>. I don&apos;t just write 
+              code; I bridge the gap between operational pain points and intelligent automation using Google Gemini.
             </p>
             <p>
-              Como AI-First Developer uso Cursor y modelos de lenguaje para desarrollar 3x más rápido, sin
-              sacrificar calidad. No solo escribo código; orquesto IA para crear software que resuelve problemas
-              reales.
+              I leverage AI-augmented workflows to accelerate the development lifecycle without sacrificing 
+              enterprise-grade architecture. I orchestrate intelligence to deliver high-ROI software solutions 
+              for complex business workflows.
             </p>
           </div>
 
-          {/* Signature */}
-          <div className="mt-6 flex items-center justify-between gap-4 flex-wrap">
-            <div className="text-xl sm:text-2xl font-black text-white">Nathanael Cedeño</div>
+          {/* Signature & Actions */}
+          <div className="mt-8 flex flex-col gap-6">
+            <div className="flex items-center justify-between gap-4 flex-wrap">
+              <div className="text-xl sm:text-2xl font-black text-white">Nathanael Cedeño</div>
 
-            {/* CTA */}
-            <a
-              href={`mailto:${email}?subject=Proyecto%20en%20mente&body=Hola%20Nathanael%2C%20quiero%20hablar%20sobre...`}
-              className="group inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-neon-blue/30 bg-neon-blue/5 text-neon-blue font-bold text-xs sm:text-sm uppercase tracking-widest hover:bg-neon-blue hover:text-black transition-all"
-            >
-              <Mail className="w-4 h-4" />
-              ¿Tienes un proyecto en mente? Trabajemos juntos
-            </a>
+              <div className="flex gap-3">
+                {/* CV Button */}
+                <a
+                  href="/Nathanael_Cedeno_CV.pdf"
+                  target="_blank"
+                  className="group inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 bg-white/5 text-gray-300 font-bold text-xs sm:text-sm uppercase tracking-widest hover:bg-white/10 hover:text-white transition-all"
+                >
+                  Download CV
+                </a>
+                
+                {/* CTA */}
+                <a
+                  href={`mailto:${email}?subject=Project%20Inquiry&body=Hi%20Nathanael%2C%20I'd%20like%20to%20discuss...`}
+                  className="group inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-neon-blue/30 bg-neon-blue/5 text-neon-blue font-bold text-xs sm:text-sm uppercase tracking-widest hover:bg-neon-blue hover:text-black transition-all"
+                >
+                  <Mail className="w-4 h-4" />
+                  Let&apos;s build
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="mt-3 flex flex-col gap-3">

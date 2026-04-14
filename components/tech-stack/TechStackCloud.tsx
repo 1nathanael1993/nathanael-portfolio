@@ -3,15 +3,17 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-const techList = [
-  { name: "Next.js", color: "#ffffff" },
-  { name: "React", color: "#61DAFB" },
-  { name: "TypeScript", color: "#3178C6" },
-  { name: "Tailwind CSS", color: "#06B6D4" },
-  { name: "Supabase", color: "#3ECF8E" },
-  { name: "PostgreSQL", color: "#4169E1" },
-  { name: "Node.js", color: "#339933" },
-  { name: "Google Gemini", color: "#8B5CF6" },
+const techStack = [
+  { name: "Next.js", color: "#ffffff", letter: "N" },
+  { name: "React", color: "#61DAFB", letter: "R" },
+  { name: "TypeScript", color: "#3178C6", letter: "T" },
+  { name: "Tailwind CSS", color: "#06B6D4", letter: "T" },
+  { name: "Supabase", color: "#3ECF8E", letter: "S" },
+  { name: "PostgreSQL", color: "#4169E1", letter: "P" },
+  { name: "Node.js", color: "#339933", letter: "N" },
+  { name: "Google Cloud (GCP)", color: "#4285F4", letter: "G" },
+  { name: "APIs REST", color: "#FF6C37", letter: "A" },
+  { name: "OpenAI / Gemini", color: "#10A37F", letter: "O" },
 ];
 
 export default function TechStackCloud() {
@@ -28,43 +30,46 @@ export default function TechStackCloud() {
   };
 
   return (
-    <section id="tech-stack" className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 overflow-hidden bg-black">
-      <div className="relative z-10 max-w-7xl mx-auto">
+    <section id="tech-stack" className="relative py-24 sm:py-32 px-4 sm:px-6 overflow-hidden bg-black">
+      <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10 sm:mb-12 md:mb-16"
+          className="text-center mb-16 sm:mb-24"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 sm:mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 tracking-tight">
             Tech <span className="text-neon-blue">Stack</span>
           </h2>
-          <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">
-            Dominio de herramientas modernas para crear experiencias digitales de nivel &apos;Unicorn Startup&apos;.
+          <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto px-4">
+            Mastery of modern tools to create &apos;Unicorn Startup&apos; level digital experiences.
           </p>
         </motion.div>
 
         <div 
           ref={containerRef}
           onMouseMove={handleMouseMove}
-          className="relative min-h-[320px] sm:min-h-[360px] md:min-h-[400px] w-full flex items-center justify-center bg-white/[0.02] border border-white/5 rounded-2xl sm:rounded-3xl overflow-hidden md:cursor-none"
+          className="relative w-full"
         >
-          {/* Custom Cursor */}
-          <motion.div 
-            animate={{ x: mousePos.x - 100, y: mousePos.y - 100 }}
-            className="absolute top-0 left-0 w-[200px] h-[200px] bg-neon-blue/10 blur-[80px] rounded-full pointer-events-none"
-          />
-
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-16 p-4 sm:p-6 md:p-8">
-            {techList.map((tech, idx) => (
-              <TechIcon 
-                key={tech.name} 
-                tech={tech} 
-                mousePos={mousePos} 
-                containerRef={containerRef}
-              />
-            ))}
+          {/* Main Container with subtle glow */}
+          <div className="relative bg-white/[0.02] border border-white/[0.05] rounded-[40px] p-8 sm:p-12 md:p-16 backdrop-blur-sm">
+            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-14">
+              {techStack.map((tech) => (
+                <TechIcon 
+                  key={tech.name} 
+                  tech={tech} 
+                  mousePos={mousePos} 
+                  containerRef={containerRef}
+                />
+              ))}
+            </div>
           </div>
+
+          {/* Magnetic Background Glow */}
+          <motion.div 
+            animate={{ x: mousePos.x - 150, y: mousePos.y - 150 }}
+            className="absolute top-0 left-0 w-[300px] h-[300px] bg-neon-blue/5 blur-[100px] rounded-full pointer-events-none -z-10"
+          />
         </div>
       </div>
     </section>
@@ -89,12 +94,11 @@ function TechIcon({ tech, mousePos, containerRef }: { tech: any, mousePos: any, 
     const dy = mousePos.y - iconCenterY;
     const distance = Math.sqrt(dx * dx + dy * dy);
 
-    // Magnetic Pull Logic (Always active near the icon)
     if (distance < 150) {
       const strength = (150 - distance) / 150;
       setOffset({
-        x: dx * strength * 0.4,
-        y: dy * strength * 0.4,
+        x: dx * strength * 0.3,
+        y: dy * strength * 0.3,
       });
     } else {
       setOffset({ x: 0, y: 0 });
@@ -109,32 +113,41 @@ function TechIcon({ tech, mousePos, containerRef }: { tech: any, mousePos: any, 
       animate={{ 
         x: offset.x, 
         y: offset.y,
-        scale: isHovered ? 1.15 : 1
+        scale: isHovered ? 1.05 : 1
       }}
-      transition={{ type: "spring", stiffness: 200, damping: 20 }}
-      className="flex flex-col items-center gap-3 relative"
+      transition={{ type: "spring", stiffness: 200, damping: 25 }}
+      className="flex flex-col items-center gap-4"
     >
-      {/* Hover Brand Glow - ONLY when directly hovered */}
-      {isHovered && (
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 0.4, scale: 1 }}
-          className="absolute -inset-4 blur-2xl rounded-full transition-all duration-300 pointer-events-none"
-          style={{ backgroundColor: tech.color }}
-        />
-      )}
-      
       <div 
-        className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-2xl font-bold transition-all duration-300 relative z-10"
+        className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl font-bold transition-all duration-500 relative overflow-hidden"
         style={{ 
-          color: isHovered ? tech.color : '#666',
-          borderColor: isHovered ? `${tech.color}44` : 'rgba(255,255,255,0.1)',
-          backgroundColor: isHovered ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.03)'
+          color: isHovered ? '#fff' : 'rgba(255,255,255,0.3)',
+          border: '1px solid',
+          borderColor: isHovered ? `${tech.color}88` : 'rgba(255,255,255,0.08)',
+          backgroundColor: isHovered ? `${tech.color}15` : 'rgba(255,255,255,0.02)',
+          boxShadow: isHovered ? `0 0 30px ${tech.color}22` : 'none'
         }}
       >
-        {tech.name[0]}
+        {/* Subtle internal glow */}
+        {isHovered && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="absolute inset-0 pointer-events-none"
+            style={{ 
+              background: `radial-gradient(circle at center, ${tech.color}22 0%, transparent 70%)` 
+            }}
+          />
+        )}
+        <span className="relative z-10 drop-shadow-sm">{tech.letter}</span>
       </div>
-      <span className="text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-widest">
+      <span 
+        className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300"
+        style={{ 
+          color: isHovered ? tech.color : 'rgba(255,255,255,0.3)',
+          opacity: isHovered ? 1 : 0.6
+        }}
+      >
         {tech.name}
       </span>
     </motion.div>

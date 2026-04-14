@@ -56,22 +56,18 @@ export default function BentoGrid() {
             className="md:col-span-2 group relative rounded-2xl overflow-hidden bg-gradient-to-r from-neon-blue/10 to-neon-violet/10 border border-white/5 p-5 sm:p-6 md:p-10 text-center"
           >
             <div className="absolute inset-0 bg-black/40 backdrop-blur-xl -z-10" />
-            <h3 className="text-xl sm:text-2xl md:text-2xl font-bold mb-2 sm:mb-3 text-white">¿Tienes un proyecto en mente?</h3>
-            <p className="text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto text-base sm:text-lg">
-              Estoy siempre abierto a nuevas oportunidades y colaboraciones en el desarrollo de software orquestado por IA.
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-black mb-4 text-white">Looking for a dev who understands your business? Let&apos;s talk</h3>
+            <p className="text-gray-400 mb-8 max-w-2xl mx-auto text-base sm:text-lg">
+              I&apos;m always open to new opportunities and collaborations in developing high-impact digital products.
             </p>
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-              <div className="flex flex-col items-center">
-                <span className="text-4xl mb-2">⚡</span>
-                <span className="text-xs text-gray-500 uppercase tracking-widest">Fast Delivery</span>
+            <div className="flex flex-wrap justify-center gap-8 sm:gap-12">
+              <div className="flex flex-col items-center group/item cursor-pointer">
+                <span className="text-4xl mb-3 transition-transform group-hover/item:scale-110 duration-300">🛠️</span>
+                <span className="text-[10px] sm:text-xs text-neon-blue font-bold uppercase tracking-[0.2em]">Mastered Technologies</span>
               </div>
-              <div className="flex flex-col items-center">
-                <span className="text-4xl mb-2">🤖</span>
-                <span className="text-xs text-gray-500 uppercase tracking-widest">AI Orchestrated</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="text-4xl mb-2">💎</span>
-                <span className="text-xs text-gray-500 uppercase tracking-widest">Premium Quality</span>
+              <div className="flex flex-col items-center group/item cursor-pointer">
+                <span className="text-4xl mb-3 transition-transform group-hover/item:scale-110 duration-300">🤝</span>
+                <span className="text-[10px] sm:text-xs text-neon-violet font-bold uppercase tracking-[0.2em]">Strategic Partner</span>
               </div>
             </div>
           </motion.div>

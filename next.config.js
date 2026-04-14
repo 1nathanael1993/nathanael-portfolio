@@ -9,6 +9,12 @@ const nextConfig = {
       },
     ],
   },
+  webpack: (config, { dev, isServer }) => {
+    if (!dev && !isServer) {
+      config.cache = false;
+    }
+    return config;
+  },
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },

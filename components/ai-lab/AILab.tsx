@@ -29,7 +29,7 @@ export default function AILab() {
             The <span className="bg-gradient-to-r from-neon-violet to-purple-400 bg-clip-text text-transparent">AI Lab</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto px-0">
-            No solo escribo código; diseño prompts, entreno contextos y orquesto modelos de lenguaje para crear software de alto rendimiento en tiempo récord.
+            I don&apos;t just write code; I design high-impact prompts, engineer deep contexts, and orchestrate Large Language Models to deliver enterprise-grade software at 10x speed.
           </p>
         </motion.div>
 
@@ -48,12 +48,12 @@ export default function AILab() {
                   <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-neon-blue" />
                 </div>
                 <div className="min-w-0">
-                  <h4 className="text-white font-bold text-sm sm:text-base">Speed Optimization</h4>
-                  <p className="text-xs text-gray-500">Cycle development efficiency</p>
+                  <h4 className="text-white font-bold text-sm sm:text-base">Performance ROI</h4>
+                  <p className="text-xs text-gray-500">Dev Cycle Efficiency</p>
                 </div>
               </div>
               <div className="text-4xl sm:text-5xl font-black text-neon-blue mb-2">+300%</div>
-              <div className="text-xs sm:text-sm text-gray-400">Development speed acceleration through AI-Augmented Workflow.</div>
+              <div className="text-xs sm:text-sm text-gray-400">Development speed acceleration through AI-Augmented Workflow without quality trade-offs.</div>
             </div>
 
             <div className="p-5 sm:p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
@@ -62,12 +62,12 @@ export default function AILab() {
                   <Cpu className="w-5 h-5 sm:w-6 sm:h-6 text-neon-violet" />
                 </div>
                 <div className="min-w-0">
-                  <h4 className="text-white font-bold text-sm sm:text-base">IDE: Cursor</h4>
-                  <p className="text-xs text-gray-500">AI-First Environment</p>
+                  <h4 className="text-white font-bold text-sm sm:text-base">Environment: AI-First</h4>
+                  <p className="text-xs text-gray-500">AI-Augmented Architecture</p>
                 </div>
               </div>
               <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
-                Utilizando Cursor como mi centro de mando, integrando LLMs directamente en el ciclo de vida del código para una orquestación impecable.
+                Leveraging next-gen tooling and directly integrating LLMs into the codebase lifecycle for flawless architectural orchestration.
               </p>
             </div>
           </motion.div>
@@ -83,6 +83,23 @@ export default function AILab() {
             
             {/* Connection Visualization */}
             <div className="relative h-full flex flex-col items-center justify-center p-6 sm:p-8 md:p-12">
+              {/* Code Snippet for "Show don't Tell" */}
+              <div className="w-full bg-black/60 rounded-lg p-4 font-mono text-[10px] sm:text-xs text-gray-300 border border-white/10 mb-8 overflow-hidden">
+                <div className="flex gap-2 mb-3">
+                  <div className="w-2 h-2 rounded-full bg-red-500/50" />
+                  <div className="w-2 h-2 rounded-full bg-yellow-500/50" />
+                  <div className="w-2 h-2 rounded-full bg-green-500/50" />
+                </div>
+                <div className="space-y-1">
+                  <p><span className="text-neon-violet">async function</span> <span className="text-neon-blue">orchestrateAI</span>(context: string) &#123;</p>
+                  <p className="pl-4 text-gray-500">&#123;/* 1. Engineer specialized prompt context */&#125;</p>
+                  <p className="pl-4"><span className="text-neon-violet">const</span> prompt = <span className="text-neon-blue">`System: Architect expert... $&#123;context&#125;`</span>;</p>
+                  <p className="pl-4 text-gray-500">&#123;/* 2. Execute high-precision inference */&#125;</p>
+                  <p className="pl-4"><span className="text-neon-violet">return await</span> gemini.<span className="text-neon-blue">generateContent</span>(prompt);</p>
+                  <p>&#125;</p>
+                </div>
+              </div>
+
               <div className="flex items-center justify-between w-full max-w-md relative gap-2 sm:gap-4">
                 {/* AI Node */}
                 <div className="relative z-10 flex flex-col items-center gap-2 sm:gap-4 shrink-0">
