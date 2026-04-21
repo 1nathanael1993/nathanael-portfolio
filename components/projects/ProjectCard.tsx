@@ -13,19 +13,14 @@ interface ProjectCardProps {
 }
 
 const iconMap: Record<string, any> = {
-  "Pagos seguros con PayPal": CreditCard,
-  "Sincronización automática iCal": RefreshCw,
-  "Chat en tiempo real integrado": MessageSquare,
-  "Panel de Administración Pro": ShieldCheck,
-  "Detección de Daños con IA": Brain,
-  "Reportes Legales Automatizados": FileText,
-  "Motor de Comparación de Imágenes": Brain,
-  "Listo para Offline (PWA)": ShieldCheck,
-  // English fallbacks (if any remain)
-  "AI Damage Detection": Brain,
-  "Automated Legal Reports": FileText,
-  "Image Comparison Engine": Brain,
-  "Offline Ready (PWA)": ShieldCheck,
+  "Secure PayPal Payment Integration": CreditCard,
+  "Automated Multi-platform iCal Sync": RefreshCw,
+  "Integrated Real-time Guest Chat": MessageSquare,
+  "Enterprise-grade Admin Dashboard": ShieldCheck,
+  "Automated AI Damage Detection": Brain,
+  "Instant Legal-ready PDF Reporting": FileText,
+  "High-precision Image Comparison Engine": Brain,
+  "PWA Architecture for Offline Field Audits": ShieldCheck,
 };
 
 export default function ProjectCard({ project, className }: ProjectCardProps) {
@@ -146,7 +141,7 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
                 aria-label={`Ver proyecto en vivo: ${project.title}`}
               >
                 <ExternalLink className="w-4 h-4 mr-2" aria-hidden="true" />
-                Ver Proyecto
+                View Project
               </a>
             </Button>
           </div>

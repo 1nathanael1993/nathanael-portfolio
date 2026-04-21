@@ -65,7 +65,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4 md:gap-8 relative z-10">
             <button
               type="button"
-              aria-label="Abrir menú"
+              aria-label="Open menu"
               onClick={() => setIsMobileMenuOpen(true)}
               className="md:hidden p-2 rounded-full text-gray-400 hover:text-white transition-colors"
             >
@@ -113,7 +113,7 @@ export default function Navbar() {
       </div>
 
 
-      {/* Overlay + menú móvil */}
+      {/* Overlay + mobile menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
@@ -137,7 +137,7 @@ export default function Navbar() {
                 <div className="absolute top-4 right-4">
                   <button
                     type="button"
-                    aria-label="Cerrar menú"
+                    aria-label="Close menu"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="p-2 rounded-full text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
                   >

@@ -43,10 +43,10 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  // Forzar scroll al inicio al cargar/recargar la página
+  // Force scroll to top on page load/reload
   useEffect(() => {
     // window.scrollTo(0, 0); // Removed to prevent forced reflow and improve performance
-    // También desactivar scroll restoration del navegador
+    // Also disable browser scroll restoration
     if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
@@ -56,7 +56,7 @@ export default function Home() {
       <SpotlightBackground />
       <Navbar />
       
-      {/* Hero Section — compacto: solo título y badge para que Proyectos quede visible con poco scroll */}
+      {/* Hero Section — compact: just title and badge for projects to be visible with minimal scroll */}
       <section id="hero" className="relative min-h-[75vh] sm:min-h-[80vh] flex flex-col items-center justify-center px-4 pt-24 sm:pt-32 pb-8 sm:pb-16 overflow-hidden">
         {/* Static/Simple Background for Mobile, Gradient for Desktop */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -104,13 +104,13 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Projects Section — inmediatamente después del Hero, visible con scroll mínimo */}
+      {/* Projects Section — immediately after Hero, visible with minimal scroll */}
       <BentoGrid />
 
       {/* About Me — human, professional, close */}
       <AboutMe />
 
-      {/* Terminal — después de Proyectos para no retrasar la vista de los proyectos */}
+      {/* Terminal — after Projects to not delay view of projects */}
       <section id="terminal" className="relative py-12 sm:py-16 md:py-20 px-4 overflow-hidden">
         <div className="relative z-10 w-full max-w-7xl mx-auto">
           <motion.div

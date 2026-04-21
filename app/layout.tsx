@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Nathanael Cedeño" }],
   openGraph: {
     title: "Nathanael Cedeño | AI-First Developer",
-    description: "No solo escribo código, diseño soluciones escalables orquestadas por IA.",
+    description: "I don't just write code; I design scalable solutions orchestrated by AI.",
     url: "https://nathanaelcedeno.com",
     siteName: "Nathanael Portfolio",
     images: [
