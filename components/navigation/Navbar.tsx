@@ -84,8 +84,9 @@ export default function Navbar() {
 
           <div className="flex items-center gap-3 relative z-10 shrink-0">
             <motion.a
-              href="/cv.pdf"
+              href="/Nathanael_Cedeno_CV.pdf"
               download
+              aria-label="Download CV"
               className="px-4 py-1.5 rounded-full border border-neon-blue/40 bg-transparent flex items-center justify-center transition-all duration-300 hover:bg-neon-blue/10"
             >
               <span className="text-[10px] font-black text-neon-blue uppercase tracking-tighter">

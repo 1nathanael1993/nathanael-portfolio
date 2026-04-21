@@ -1,15 +1,27 @@
 "use client";
 
 import { useEffect } from "react";
-import InteractiveTerminal from "@/components/terminal/InteractiveTerminal";
+import dynamic from "next/dynamic";
 import BentoGrid from "@/components/projects/BentoGrid";
 import AboutMe from "@/components/about/AboutMe";
-import AILab from "@/components/ai-lab/AILab";
-import TechStackCloud from "@/components/tech-stack/TechStackCloud";
 import Navbar from "@/components/navigation/Navbar";
-import Footer from "@/components/navigation/Footer";
 import SpotlightBackground from "@/components/visuals/SpotlightBackground";
 import { motion } from "framer-motion";
+
+// Lazy load non-critical components below the fold
+const InteractiveTerminal = dynamic(() => import("@/components/terminal/InteractiveTerminal"), {
+  ssr: false,
+  loading: () => <div className="h-[400px] w-full animate-pulse bg-white/5 rounded-lg" />
+});
+const AILab = dynamic(() => import("@/components/ai-lab/AILab"), {
+  ssr: false,
+});
+const TechStackCloud = dynamic(() => import("@/components/tech-stack/TechStackCloud"), {
+  ssr: false,
+});
+const Footer = dynamic(() => import("@/components/navigation/Footer"), {
+  ssr: false,
+});
 
 export default function Home() {
   // Forzar scroll al inicio al cargar/recargar la página

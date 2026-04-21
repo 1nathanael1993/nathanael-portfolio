@@ -48,8 +48,8 @@ export default function AILab() {
                   <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-neon-blue" />
                 </div>
                 <div className="min-w-0">
-                  <h4 className="text-white font-bold text-sm sm:text-base">Performance ROI</h4>
-                  <p className="text-xs text-gray-500">Dev Cycle Efficiency</p>
+                  <h3 className="text-white font-bold text-sm sm:text-base">Performance ROI</h3>
+                  <p className="text-xs text-gray-400">Dev Cycle Efficiency</p>
                 </div>
               </div>
               <div className="text-4xl sm:text-5xl font-black text-neon-blue mb-2">+300%</div>
@@ -62,8 +62,8 @@ export default function AILab() {
                   <Cpu className="w-5 h-5 sm:w-6 sm:h-6 text-neon-violet" />
                 </div>
                 <div className="min-w-0">
-                  <h4 className="text-white font-bold text-sm sm:text-base">Environment: AI-First</h4>
-                  <p className="text-xs text-gray-500">AI-Augmented Architecture</p>
+                  <h3 className="text-white font-bold text-sm sm:text-base">Environment: AI-First</h3>
+                  <p className="text-xs text-gray-400">AI-Augmented Architecture</p>
                 </div>
               </div>
               <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
@@ -143,7 +143,7 @@ export default function AILab() {
                     className="h-full bg-gradient-to-r from-neon-violet to-neon-blue"
                   />
                 </div>
-                <div className="flex justify-between gap-1 sm:gap-2 text-[8px] sm:text-[10px] font-mono text-gray-500 uppercase tracking-widest">
+                <div className="flex justify-between gap-1 sm:gap-2 text-[8px] sm:text-[10px] font-mono text-gray-400 uppercase tracking-widest">
                   <span className="truncate">Context</span>
                   <span className="truncate">Orchestration</span>
                   <span className="truncate">Synthesis</span>

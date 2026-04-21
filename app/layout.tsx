@@ -9,6 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nathanaelcedeno.com"),
   title: "Nathanael Cedeño | AI-First Full Stack Developer",
   description: "Orchestrating the Future through AI-Augmented Development. Junior Full Stack Developer & AI Orchestrator based in Santo Domingo.",
   keywords: ["Nathanael Cedeño", "AI Developer", "Full Stack Developer", "Next.js", "TypeScript", "Dominican Republic", "AI-Augmented Development", "Prompt Engineering"],
@@ -47,8 +48,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${inter.variable} scroll-smooth`}>
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }

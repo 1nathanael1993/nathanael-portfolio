@@ -85,7 +85,7 @@ export default function AboutMe() {
           </div>
 
           <div className="mt-3 flex flex-col gap-3">
-            <div className="text-[10px] sm:text-xs text-gray-500">
+            <div className="text-[10px] sm:text-xs text-gray-400">
               Email: <span className="text-gray-300">{emailObfuscated}</span>
             </div>
 

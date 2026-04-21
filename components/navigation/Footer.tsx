@@ -51,6 +51,7 @@ export default function Footer() {
               href="https://github.com/1nathanael1993" 
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub Profile"
               className="text-gray-400 transition-colors"
             >
               <Github className="w-6 h-6" />
@@ -60,6 +61,7 @@ export default function Footer() {
               href="https://www.linkedin.com/in/nathanaelcedeno/" 
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
               className="text-gray-400 transition-colors"
             >
               <Linkedin className="w-6 h-6" />
@@ -67,7 +69,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="text-xs sm:text-sm font-mono text-gray-500 uppercase tracking-widest">
+          <div className="text-xs sm:text-sm font-mono text-gray-400 uppercase tracking-widest">
             © 2026 Nathanael Cedeño. <span className="text-gray-300">Built with AI.</span>
           </div>
         </div>

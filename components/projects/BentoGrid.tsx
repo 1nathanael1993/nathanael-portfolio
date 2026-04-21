@@ -62,11 +62,11 @@ export default function BentoGrid() {
             </p>
             <div className="flex flex-wrap justify-center gap-8 sm:gap-12">
               <div className="flex flex-col items-center group/item cursor-pointer">
-                <span className="text-4xl mb-3 transition-transform group-hover/item:scale-110 duration-300">🛠️</span>
+                <span className="text-4xl mb-3 transition-transform group-hover/item:scale-110 duration-300" role="img" aria-label="Tools icon">🛠️</span>
                 <span className="text-[10px] sm:text-xs text-neon-blue font-bold uppercase tracking-[0.2em]">Mastered Technologies</span>
               </div>
               <div className="flex flex-col items-center group/item cursor-pointer">
-                <span className="text-4xl mb-3 transition-transform group-hover/item:scale-110 duration-300">🤝</span>
+                <span className="text-4xl mb-3 transition-transform group-hover/item:scale-110 duration-300" role="img" aria-label="Partnership icon">🤝</span>
                 <span className="text-[10px] sm:text-xs text-neon-violet font-bold uppercase tracking-[0.2em]">Strategic Partner</span>
               </div>
             </div>

@@ -250,7 +250,7 @@ export default function InteractiveTerminal() {
                 <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/80 shadow-[0_0_10px_rgba(234,179,8,0.3)]" />
                 <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500/80 shadow-[0_0_10px_rgba(34,197,94,0.3)]" />
               </div>
-              <span className="ml-2 sm:ml-4 text-[9px] sm:text-[10px] text-gray-500 font-mono tracking-widest uppercase truncate">
+              <span className="ml-2 sm:ml-4 text-[9px] sm:text-[10px] text-gray-400 font-mono tracking-widest uppercase truncate">
                 nathanael@portfolio
               </span>
             </div>
@@ -271,14 +271,14 @@ export default function InteractiveTerminal() {
                   >
                     {cmd.input && (
                       <div className="flex items-center gap-2 text-neon-blue">
-                        <span className="text-gray-600 font-bold">❯</span>
+                        <span className="text-gray-400 font-bold" aria-hidden="true">❯</span>
                         <span className="font-semibold">{cmd.input}</span>
                       </div>
                     )}
                     {cmd.output.map((line, lineIdx) => (
                       <div
                         key={lineIdx}
-                        className="text-gray-400 whitespace-pre-wrap leading-relaxed"
+                        className="text-gray-300 whitespace-pre-wrap leading-relaxed"
                       >
                         {line}
                       </div>
@@ -289,7 +289,7 @@ export default function InteractiveTerminal() {
 
               {/* Input Area / Active Prompt */}
               <div className="flex items-center gap-2 text-neon-blue">
-                <span className="text-gray-600 font-bold">❯</span>
+                <span className="text-gray-400 font-bold" aria-hidden="true">❯</span>
                 <div className="flex items-center flex-1 relative">
                   <span className="text-white min-w-[1px]">{currentInput}</span>
                   {!isTyping && (
@@ -300,7 +300,7 @@ export default function InteractiveTerminal() {
                     />
                   )}
                   {currentInput === "" && !isTyping && (
-                    <span className="text-white/20 absolute left-0 pointer-events-none">
+                    <span className="text-white/40 absolute left-0 pointer-events-none">
                       {commandHistory.length <= 1
                         ? "Type 'ls' to explore..."
                         : "Type 'help' for more commands"}
@@ -312,12 +312,15 @@ export default function InteractiveTerminal() {
 
             {/* Hidden form input that captures focus */}
             <form onSubmit={handleSubmit} className="sr-only">
+              <label htmlFor="terminal-input">Terminal Command</label>
               <input
+                id="terminal-input"
                 ref={inputRef}
                 type="text"
                 value={currentInput}
                 onChange={(e) => setCurrentInput(e.target.value)}
                 onKeyDown={handleKeyDown}
+                aria-label="Terminal Input"
                 autoFocus
               />
             </form>

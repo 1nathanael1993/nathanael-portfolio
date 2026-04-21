@@ -88,7 +88,7 @@ export default function ProjectCard({ project, className, delay = 0 }: ProjectCa
             return (
               <div key={idx} className="flex items-center gap-3 group/item">
                 <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover/item:bg-neon-blue/20 transition-colors">
-                  <Icon className="w-4 h-4 text-gray-400 group-hover/item:text-neon-blue transition-colors" />
+                  <Icon className="w-4 h-4 text-gray-400 group-hover/item:text-neon-blue transition-colors" aria-hidden="true" />
                 </div>
                 <span className="text-sm text-gray-300 group-hover/item:text-white transition-colors">
                   {feature}
@@ -143,8 +143,13 @@ export default function ProjectCard({ project, className, delay = 0 }: ProjectCa
               asChild
               className="w-full justify-center bg-neon-blue/10 border-neon-blue/50 text-neon-blue hover:bg-neon-blue hover:text-black transition-all font-bold py-3"
             >
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-4 h-4 mr-2" />
+              <a 
+                href={project.liveUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label={`Ver proyecto en vivo: ${project.title}`}
+              >
+                <ExternalLink className="w-4 h-4 mr-2" aria-hidden="true" />
                 Ver Proyecto
               </a>
             </Button>
