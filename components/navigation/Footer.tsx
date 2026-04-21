@@ -41,7 +41,7 @@ export default function Footer() {
             <div className="p-2 rounded-lg bg-white/5 border border-white/10 shrink-0">
               <MapPin className="w-4 h-4" />
             </div>
-            <span className="text-xs sm:text-sm font-medium text-left md:text-center">Santo Domingo Este, República Dominicana</span>
+            <span className="text-xs sm:text-sm font-medium text-left md:text-center">Santo Domingo Este, Dominican Republic</span>
           </div>
 
           {/* Social Links */}
