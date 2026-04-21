@@ -142,7 +142,10 @@ export default function InteractiveTerminal() {
 
   useEffect(() => {
     if (terminalRef.current) {
-      terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
+      const element = terminalRef.current;
+      requestAnimationFrame(() => {
+        element.scrollTop = element.scrollHeight;
+      });
     }
   }, [commandHistory]);
 

@@ -39,10 +39,10 @@ export default function Home() {
       
       {/* Hero Section — compacto: solo título y badge para que Proyectos quede visible con poco scroll */}
       <section id="hero" className="relative min-h-[75vh] sm:min-h-[80vh] flex flex-col items-center justify-center px-4 pt-24 sm:pt-32 pb-8 sm:pb-16 overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,240,255,0.1),transparent_50%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(176,38,255,0.1),transparent_50%)]"></div>
+        {/* Static/Simple Background for Mobile, Gradient for Desktop */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,240,255,0.05),transparent_60%)] lg:bg-[radial-gradient(circle_at_50%_50%,rgba(0,240,255,0.1),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(176,38,255,0.03),transparent_60%)] lg:bg-[radial-gradient(circle_at_80%_20%,rgba(176,38,255,0.1),transparent_50%)]" />
         </div>
 
         <div className="relative z-10 w-full max-w-7xl mx-auto text-center">

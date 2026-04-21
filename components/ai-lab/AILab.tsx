@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useAnimationFrame } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 import { Brain, Code, Zap, Cpu, Sparkles } from "lucide-react";
 
 export default function AILab() {
@@ -10,7 +10,7 @@ export default function AILab() {
   return (
     <section id="ai-lab" className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 overflow-hidden bg-black">
       {/* Grid Pattern with fading edges */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_20%,transparent_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_20%,transparent_100%)] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
@@ -73,12 +73,7 @@ export default function AILab() {
           </motion.div>
 
           {/* Center Panel: Visual Connection */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="lg:col-span-2 relative p-1 rounded-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/10 overflow-hidden min-h-[280px] sm:min-h-[320px] md:min-h-[400px]"
-          >
+          <div className="lg:col-span-2 relative p-1 rounded-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/10 overflow-hidden min-h-[280px] sm:min-h-[320px] md:min-h-[400px]">
             <div className="absolute inset-0 bg-black/60 lg:bg-black/40 backdrop-blur-sm lg:backdrop-blur-xl" />
             
             {/* Connection Visualization */}
@@ -104,12 +99,8 @@ export default function AILab() {
                 {/* AI Node */}
                 <div className="relative z-10 flex flex-col items-center gap-2 sm:gap-4 shrink-0">
                   <div className="relative">
-                    <motion.div 
-                      animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      className="absolute -inset-3 sm:-inset-4 bg-neon-violet/20 rounded-full blur-xl"
-                    />
-                    <div className="w-14 h-14 sm:w-[72px] sm:h-[72px] md:w-20 md:h-20 rounded-xl sm:rounded-2xl bg-neon-violet/20 border-2 border-neon-violet/50 flex items-center justify-center shadow-[0_0_30px_rgba(176,38,255,0.3)] relative">
+                    <div className="absolute -inset-3 sm:-inset-4 bg-neon-violet/10 rounded-full blur-xl animate-pulse" />
+                    <div className="w-14 h-14 sm:w-[72px] sm:h-[72px] md:w-20 md:h-20 rounded-xl sm:rounded-2xl bg-neon-violet/20 border-2 border-neon-violet/50 flex items-center justify-center shadow-[0_0_20px_rgba(176,38,255,0.2)] relative">
                       <Brain className="w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 text-neon-violet" />
                     </div>
                   </div>
@@ -118,16 +109,12 @@ export default function AILab() {
 
                 {/* Connection Line */}
                 <div className="absolute left-1/2 top-7 sm:top-10 -translate-x-1/2 w-full h-[2px] bg-white/5 overflow-hidden pointer-events-none">
-                  <motion.div 
-                    animate={{ x: [-100, 400] }}
-                    transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-                    className="w-20 h-full bg-gradient-to-r from-transparent via-neon-blue to-transparent"
-                  />
+                  <div className="w-20 h-full bg-gradient-to-r from-transparent via-neon-blue to-transparent animate-[shimmer_2s_infinite]" />
                 </div>
 
                 {/* Code Node */}
                 <div className="relative z-10 flex flex-col items-center gap-2 sm:gap-4 shrink-0">
-                  <div className="w-14 h-14 sm:w-[72px] sm:h-[72px] md:w-20 md:h-20 rounded-xl sm:rounded-2xl bg-neon-blue/20 border-2 border-neon-blue/50 flex items-center justify-center shadow-[0_0_30px_rgba(0,240,255,0.3)]">
+                  <div className="w-14 h-14 sm:w-[72px] sm:h-[72px] md:w-20 md:h-20 rounded-xl sm:rounded-2xl bg-neon-blue/20 border-2 border-neon-blue/50 flex items-center justify-center shadow-[0_0_20px_rgba(0,240,255,0.2)]">
                     <Code className="w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 text-neon-blue" />
                   </div>
                   <span className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase">High-Perf Code</span>
@@ -136,12 +123,7 @@ export default function AILab() {
 
               <div className="mt-8 sm:mt-12 md:mt-16 w-full space-y-3 sm:space-y-4">
                 <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
-                  <motion.div 
-                    initial={{ width: "0%" }}
-                    whileInView={{ width: "100%" }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="h-full bg-gradient-to-r from-neon-violet to-neon-blue"
-                  />
+                  <div className="h-full bg-gradient-to-r from-neon-violet to-neon-blue animate-[progress_3s_infinite_ease-in-out]" />
                 </div>
                 <div className="flex justify-between gap-1 sm:gap-2 text-[8px] sm:text-[10px] font-mono text-gray-400 uppercase tracking-widest">
                   <span className="truncate">Context</span>
@@ -157,9 +139,10 @@ export default function AILab() {
                 </span>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+

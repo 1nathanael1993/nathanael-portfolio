@@ -12,6 +12,8 @@ export default function SpotlightBackground() {
   const smoothY = useSpring(mouseY, springConfig);
 
   useEffect(() => {
+    if (typeof window === 'undefined' || window.innerWidth < 1024) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
