@@ -124,6 +124,7 @@ export default function InteractiveTerminal() {
   const commandListRef = useRef<string[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
+  const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Initial welcome message
@@ -141,11 +142,8 @@ export default function InteractiveTerminal() {
   }, []);
 
   useEffect(() => {
-    if (terminalRef.current) {
-      const element = terminalRef.current;
-      requestAnimationFrame(() => {
-        element.scrollTop = element.scrollHeight;
-      });
+    if (bottomRef.current) {
+      bottomRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [commandHistory]);
 
@@ -256,10 +254,8 @@ export default function InteractiveTerminal() {
             >
               <AnimatePresence mode="popLayout">
                 {commandHistory.map((cmd, idx) => (
-                  <motion.div
+                  <div
                     key={`${cmd.timestamp}-${idx}`}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
                     className="space-y-1"
                   >
                     {cmd.input && (
@@ -276,8 +272,9 @@ export default function InteractiveTerminal() {
                         {line}
                       </div>
                     ))}
-                  </motion.div>
+                  </div>
                 ))}
+                <div ref={bottomRef} />
               </AnimatePresence>
 
               {/* Input Area / Active Prompt */}
