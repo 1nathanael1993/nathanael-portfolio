@@ -23,7 +23,7 @@ export default function TechStackCloud() {
     <section id="tech-stack" className="relative py-24 sm:py-32 px-4 sm:px-6 overflow-hidden bg-black">
       <div className="relative z-10 max-w-6xl mx-auto">
         <div
-          className="reveal-on-scroll text-center mb-16 sm:mb-24"
+          className="text-center mb-16 sm:mb-24"
         >
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 tracking-tight">
             Tech <span className="text-neon-blue">Stack</span>

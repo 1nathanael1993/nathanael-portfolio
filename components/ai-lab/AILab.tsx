@@ -15,7 +15,7 @@ export default function AILab() {
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
         <div
-          className="reveal-on-scroll text-center mb-12 sm:mb-16 md:mb-20"
+          className="text-center mb-12 sm:mb-16 md:mb-20"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-violet/30 bg-neon-violet/5 mb-4 sm:mb-6">
             <Sparkles className="w-4 h-4 text-neon-violet" />
