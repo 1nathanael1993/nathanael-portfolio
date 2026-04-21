@@ -30,10 +30,10 @@ export default function AILab() {
         </div>
 
         {/* Dashboard Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="flex flex-col lg:flex-row justify-center items-start gap-6 sm:gap-8">
           {/* Left Panel: Workflow Stats */}
           <div
-            className="reveal-on-scroll lg:col-span-1 space-y-4 sm:space-y-6"
+            className="reveal-on-scroll w-full lg:w-1/3 max-w-sm space-y-4 sm:space-y-6"
           >
             <div className="p-5 sm:p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
               <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
@@ -66,7 +66,7 @@ export default function AILab() {
           </div>
 
           {/* Center Panel: Visual Connection */}
-          <div className="lg:col-span-2 relative p-1 rounded-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/10 overflow-hidden min-h-[280px] sm:min-h-[320px] md:min-h-[400px]">
+          <div className="w-full lg:w-2/3 max-w-2xl relative p-1 rounded-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/10 overflow-hidden min-h-[280px] sm:min-h-[320px] md:min-h-[400px]">
             <div className="absolute inset-0 bg-black/60 lg:bg-black/40 backdrop-blur-sm lg:backdrop-blur-xl" />
             
             {/* Connection Visualization */}
