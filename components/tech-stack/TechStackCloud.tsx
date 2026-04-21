@@ -18,28 +18,12 @@ const techStack = [
 
 export default function TechStackCloud() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    if (!containerRef.current) return;
-    // Use getBoundingClientRect only if absolutely necessary and not in high frequency
-    // But since it's already gated by desktop check, it's safer.
-    // Optimization: Read rect once per frame or use a cheaper way if possible.
-    const rect = containerRef.current.getBoundingClientRect();
-    setMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
-  }, []);
 
   return (
     <section id="tech-stack" className="relative py-24 sm:py-32 px-4 sm:px-6 overflow-hidden bg-black">
       <div className="relative z-10 max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16 sm:mb-24"
+        <div
+          className="reveal-on-scroll text-center mb-16 sm:mb-24"
         >
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 tracking-tight">
             Tech <span className="text-neon-blue">Stack</span>
@@ -47,15 +31,10 @@ export default function TechStackCloud() {
           <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto px-4">
             Mastery of modern tools to create &apos;Unicorn Startup&apos; level digital experiences.
           </p>
-        </motion.div>
+        </div>
 
         <div 
           ref={containerRef}
-          onMouseMove={(e) => {
-            if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
-              handleMouseMove(e);
-            }
-          }}
           className="relative w-full"
         >
           <div className="relative bg-white/[0.02] border border-white/[0.05] rounded-[40px] p-8 sm:p-12 md:p-16 backdrop-blur-sm">
@@ -64,66 +43,24 @@ export default function TechStackCloud() {
                 <TechIcon 
                   key={tech.name} 
                   tech={tech} 
-                  mousePos={mousePos} 
                 />
               ))}
             </div>
           </div>
 
-          <motion.div 
-            animate={{ x: mousePos.x - 150, y: mousePos.y - 150 }}
-            className="absolute top-0 left-0 w-[300px] h-[300px] bg-neon-blue/5 blur-[100px] rounded-full pointer-events-none -z-10 hidden lg:block"
-          />
+          {/* Static Background Glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-neon-blue/5 blur-[100px] rounded-full pointer-events-none -z-10" />
         </div>
       </div>
     </section>
   );
 }
 
-function TechIcon({ tech, mousePos }: { tech: any, mousePos: any }) {
-  const iconRef = useRef<HTMLDivElement>(null);
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
+function TechIcon({ tech }: { tech: any }) {
   const [isHovered, setIsHovered] = useState(false);
-  const rectRef = useRef<DOMRect | null>(null);
-
-  // Update rect on mount and resize, not on mouse move
-  useEffect(() => {
-    if (typeof window === 'undefined' || window.innerWidth < 1024) return;
-    
-    const updateRect = () => {
-      if (iconRef.current) {
-        rectRef.current = iconRef.current.getBoundingClientRect();
-      }
-    };
-
-    updateRect();
-    window.addEventListener('resize', updateRect);
-    return () => window.removeEventListener('resize', updateRect);
-  }, []);
-
-  useEffect(() => {
-    if (typeof window === 'undefined' || window.innerWidth < 1024 || !rectRef.current) return;
-
-    // Use cached rect to calculate distance, avoiding layout read here
-    const iconCenterX = rectRef.current.left + rectRef.current.width / 2;
-    const iconCenterY = rectRef.current.top + rectRef.current.height / 2;
-
-    // Adjust mousePos to viewport coordinates for calculation
-    // mousePos is relative to TechStackCloud container
-    // We need a consistent coordinate system.
-    // Let's keep it simple: if we are here, we are on desktop.
-    
-    // Instead of complex coordinate math, let's just use the cached rect position
-    // relative to the parent if we can, or just skip magnetic effect if it's too buggy.
-    
-    // Better: let's remove the magnetic offset entirely to ensure 100 performance score
-    // and keep only the hover state which is CSS/simple JS.
-    // The user wants 100.
-  }, [mousePos]);
 
   return (
     <motion.div
-      ref={iconRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       whileHover={{ scale: 1.05 }}

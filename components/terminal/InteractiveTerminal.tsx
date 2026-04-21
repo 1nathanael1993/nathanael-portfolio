@@ -314,7 +314,6 @@ export default function InteractiveTerminal() {
                 onChange={(e) => setCurrentInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 aria-label="Terminal Input"
-                autoFocus
               />
             </form>
           </div>

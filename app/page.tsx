@@ -24,6 +24,25 @@ const Footer = dynamic(() => import("@/components/navigation/Footer"), {
 });
 
 export default function Home() {
+  useEffect(() => {
+    // Intersection Observer for scroll reveals
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    document.querySelectorAll(".reveal-on-scroll").forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   // Forzar scroll al inicio al cargar/recargar la página
   useEffect(() => {
     // window.scrollTo(0, 0); // Removed to prevent forced reflow and improve performance

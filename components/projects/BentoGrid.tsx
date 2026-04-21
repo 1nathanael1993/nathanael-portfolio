@@ -15,12 +15,8 @@ export default function BentoGrid() {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-12 sm:mb-16 md:mb-20"
+        <div
+          className="reveal-on-scroll mb-12 sm:mb-16 md:mb-20"
         >
           <div className="flex items-center gap-4 mb-4">
             <div className="h-[1px] w-12 bg-neon-blue" />
@@ -31,29 +27,23 @@ export default function BentoGrid() {
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tight">
             Featured <span className="bg-gradient-to-r from-neon-blue to-neon-violet bg-clip-text text-transparent">Projects</span>
           </h2>
-        </motion.div>
+        </div>
 
         {/* Symmetric Grid - Same width for both cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
           {/* TuHospedajeRD */}
           <ProjectCard 
             project={projects[0]} 
-            delay={0.1}
           />
           
           {/* VeriStay AI */}
           <ProjectCard 
             project={projects[1]} 
-            delay={0.3}
           />
 
           {/* Call to Action Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="md:col-span-2 group relative rounded-2xl overflow-hidden bg-gradient-to-r from-neon-blue/10 to-neon-violet/10 border border-white/5 p-5 sm:p-6 md:p-10 text-center"
+          <div
+            className="reveal-on-scroll md:col-span-2 group relative rounded-2xl overflow-hidden bg-gradient-to-r from-neon-blue/10 to-neon-violet/10 border border-white/5 p-5 sm:p-6 md:p-10 text-center"
           >
             <div className="absolute inset-0 bg-black/60 lg:bg-black/40 backdrop-blur-sm lg:backdrop-blur-xl -z-10" />
             <h3 className="text-xl sm:text-2xl md:text-3xl font-black mb-4 text-white">Looking for a dev who understands your business? Let&apos;s talk</h3>
@@ -70,7 +60,7 @@ export default function BentoGrid() {
                 <span className="text-[10px] sm:text-xs text-neon-violet font-bold uppercase tracking-[0.2em]">Strategic Partner</span>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

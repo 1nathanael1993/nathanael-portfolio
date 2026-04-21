@@ -28,14 +28,10 @@ const iconMap: Record<string, any> = {
   "Offline Ready (PWA)": ShieldCheck,
 };
 
-export default function ProjectCard({ project, className, delay = 0 }: ProjectCardProps) {
+export default function ProjectCard({ project, className }: ProjectCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30, scale: 0.95 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, delay, ease: [0.23, 1, 0.32, 1] }}
-      className={`group relative h-full flex flex-col rounded-2xl overflow-hidden bg-black/80 lg:bg-black/40 backdrop-blur-sm lg:backdrop-blur-md border border-white/10 hover:border-neon-blue/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(0,240,255,0.15)] ${className}`}
+    <div
+      className={`reveal-on-scroll group relative h-full flex flex-col rounded-2xl overflow-hidden bg-black/80 lg:bg-black/40 backdrop-blur-sm lg:backdrop-blur-md border border-white/10 hover:border-neon-blue/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(0,240,255,0.15)] ${className}`}
     >
       {/* Border Beam Effect - Only on hover for performance */}
       <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -159,6 +155,6 @@ export default function ProjectCard({ project, className, delay = 0 }: ProjectCa
 
       {/* Glass Reflection */}
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
-    </motion.div>
+    </div>
   );
 }

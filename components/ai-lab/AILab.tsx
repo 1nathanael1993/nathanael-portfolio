@@ -14,12 +14,8 @@ export default function AILab() {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12 sm:mb-16 md:mb-20"
+        <div
+          className="reveal-on-scroll text-center mb-12 sm:mb-16 md:mb-20"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-violet/30 bg-neon-violet/5 mb-4 sm:mb-6">
             <Sparkles className="w-4 h-4 text-neon-violet" />
@@ -31,16 +27,13 @@ export default function AILab() {
           <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto px-0">
             I don&apos;t just write code; I design high-impact prompts, engineer deep contexts, and orchestrate Large Language Models to deliver enterprise-grade software at 10x speed.
           </p>
-        </motion.div>
+        </div>
 
         {/* Dashboard Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Left Panel: Workflow Stats */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-1 space-y-4 sm:space-y-6"
+          <div
+            className="reveal-on-scroll lg:col-span-1 space-y-4 sm:space-y-6"
           >
             <div className="p-5 sm:p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
               <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
@@ -70,7 +63,7 @@ export default function AILab() {
                 Leveraging next-gen tooling and directly integrating LLMs into the codebase lifecycle for flawless architectural orchestration.
               </p>
             </div>
-          </motion.div>
+          </div>
 
           {/* Center Panel: Visual Connection */}
           <div className="lg:col-span-2 relative p-1 rounded-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/10 overflow-hidden min-h-[280px] sm:min-h-[320px] md:min-h-[400px]">

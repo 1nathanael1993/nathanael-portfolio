@@ -14,12 +14,8 @@ export default function AboutMe() {
       <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_25%,#000_20%,transparent_100%)] bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:48px_48px] opacity-30 pointer-events-none" />
 
       <div className="relative z-10 max-w-3xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 18, scale: 0.98 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, margin: "-120px" }}
-          transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          className="rounded-2xl border border-white/10 bg-white/[0.08] lg:bg-white/[0.04] backdrop-blur-md lg:backdrop-blur-xl shadow-[0_0_60px_rgba(0,240,255,0.06)] p-6 sm:p-8 md:p-10"
+        <div
+          className="reveal-on-scroll rounded-2xl border border-white/10 bg-white/[0.08] lg:bg-white/[0.04] backdrop-blur-md lg:backdrop-blur-xl shadow-[0_0_60px_rgba(0,240,255,0.06)] p-6 sm:p-8 md:p-10"
         >
           {/* Label */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-violet/25 bg-neon-violet/5 mb-5">
@@ -112,7 +108,7 @@ export default function AboutMe() {
               </motion.a>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
