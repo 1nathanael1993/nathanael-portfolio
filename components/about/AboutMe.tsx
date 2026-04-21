@@ -19,7 +19,7 @@ export default function AboutMe() {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-120px" }}
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-[0_0_60px_rgba(0,240,255,0.06)] p-6 sm:p-8 md:p-10"
+          className="rounded-2xl border border-white/10 bg-white/[0.08] lg:bg-white/[0.04] backdrop-blur-md lg:backdrop-blur-xl shadow-[0_0_60px_rgba(0,240,255,0.06)] p-6 sm:p-8 md:p-10"
         >
           {/* Label */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-violet/25 bg-neon-violet/5 mb-5">

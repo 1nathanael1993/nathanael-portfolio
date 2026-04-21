@@ -26,7 +26,7 @@ const Footer = dynamic(() => import("@/components/navigation/Footer"), {
 export default function Home() {
   // Forzar scroll al inicio al cargar/recargar la página
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0); // Removed to prevent forced reflow and improve performance
     // También desactivar scroll restoration del navegador
     if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
@@ -46,30 +46,22 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 w-full max-w-7xl mx-auto text-center">
-          {/* Main Title */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
+          {/* Main Title - Optimized for LCP */}
+          <div className="reveal-on-scroll is-visible">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neon-blue/30 bg-neon-blue/5 backdrop-blur-sm mb-6 sm:mb-8 group cursor-pointer relative overflow-hidden">
               <span className="text-sm text-neon-blue">⚡</span>
               <span className="text-xs md:text-sm font-medium tracking-wide uppercase">
                 Full-Stack & AI Automation Specialist
               </span>
-              <motion.div
-                animate={{ top: ["-100%", "200%"] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                className="absolute left-0 right-0 h-10 bg-gradient-to-b from-transparent via-neon-blue/10 to-transparent pointer-events-none"
-              />
+              <div className="absolute left-0 right-0 h-10 bg-gradient-to-b from-transparent via-neon-blue/10 to-transparent pointer-events-none animate-[pulse_4s_infinite]" />
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-black mb-0 tracking-tighter break-words leading-[1.1]">
-              <span className="bg-gradient-to-r from-neon-blue via-neon-violet to-neon-blue bg-[length:200%_auto] animate-gradient bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-neon-blue via-neon-violet to-neon-blue bg-[length:200%_auto] lg:animate-gradient bg-clip-text text-transparent">
                 Full-Stack Developer specialized in Automation & AI. Building products that drive real business ROI.
               </span>
             </h1>
-          </motion.div>
+          </div>
         </div>
 
         {/* Scroll Indicator */}

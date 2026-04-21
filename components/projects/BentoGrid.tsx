@@ -55,7 +55,7 @@ export default function BentoGrid() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="md:col-span-2 group relative rounded-2xl overflow-hidden bg-gradient-to-r from-neon-blue/10 to-neon-violet/10 border border-white/5 p-5 sm:p-6 md:p-10 text-center"
           >
-            <div className="absolute inset-0 bg-black/40 backdrop-blur-xl -z-10" />
+            <div className="absolute inset-0 bg-black/60 lg:bg-black/40 backdrop-blur-sm lg:backdrop-blur-xl -z-10" />
             <h3 className="text-xl sm:text-2xl md:text-3xl font-black mb-4 text-white">Looking for a dev who understands your business? Let&apos;s talk</h3>
             <p className="text-gray-400 mb-8 max-w-2xl mx-auto text-base sm:text-lg">
               I&apos;m always open to new opportunities and collaborations in developing high-impact digital products.

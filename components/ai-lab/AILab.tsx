@@ -79,7 +79,7 @@ export default function AILab() {
             viewport={{ once: true }}
             className="lg:col-span-2 relative p-1 rounded-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/10 overflow-hidden min-h-[280px] sm:min-h-[320px] md:min-h-[400px]"
           >
-            <div className="absolute inset-0 bg-black/40 backdrop-blur-xl" />
+            <div className="absolute inset-0 bg-black/60 lg:bg-black/40 backdrop-blur-sm lg:backdrop-blur-xl" />
             
             {/* Connection Visualization */}
             <div className="relative h-full flex flex-col items-center justify-center p-6 sm:p-8 md:p-12">

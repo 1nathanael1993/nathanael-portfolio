@@ -35,9 +35,9 @@ export default function ProjectCard({ project, className, delay = 0 }: ProjectCa
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, delay, ease: [0.23, 1, 0.32, 1] }}
-      className={`group relative h-full flex flex-col rounded-2xl overflow-hidden bg-black/40 backdrop-blur-md border border-white/10 hover:border-neon-blue/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(0,240,255,0.15)] ${className}`}
+      className={`group relative h-full flex flex-col rounded-2xl overflow-hidden bg-black/80 lg:bg-black/40 backdrop-blur-sm lg:backdrop-blur-md border border-white/10 hover:border-neon-blue/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(0,240,255,0.15)] ${className}`}
     >
-      {/* Border Beam Effect */}
+      {/* Border Beam Effect - Only on hover for performance */}
       <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         <div className="absolute inset-0 border-2 border-transparent">
           <div className="absolute top-0 left-0 w-full h-full [mask-image:linear-gradient(white,transparent)]">

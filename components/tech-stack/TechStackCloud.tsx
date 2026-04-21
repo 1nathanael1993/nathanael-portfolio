@@ -48,7 +48,11 @@ export default function TechStackCloud() {
 
         <div 
           ref={containerRef}
-          onMouseMove={handleMouseMove}
+          onMouseMove={(e) => {
+            if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
+              handleMouseMove(e);
+            }
+          }}
           className="relative w-full"
         >
           {/* Main Container with subtle glow */}
@@ -65,10 +69,10 @@ export default function TechStackCloud() {
             </div>
           </div>
 
-          {/* Magnetic Background Glow */}
+          {/* Magnetic Background Glow - Only on Desktop */}
           <motion.div 
             animate={{ x: mousePos.x - 150, y: mousePos.y - 150 }}
-            className="absolute top-0 left-0 w-[300px] h-[300px] bg-neon-blue/5 blur-[100px] rounded-full pointer-events-none -z-10"
+            className="absolute top-0 left-0 w-[300px] h-[300px] bg-neon-blue/5 blur-[100px] rounded-full pointer-events-none -z-10 hidden lg:block"
           />
         </div>
       </div>

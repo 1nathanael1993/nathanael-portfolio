@@ -218,28 +218,18 @@ export default function InteractiveTerminal() {
       initial={{ opacity: 0, y: 40, scale: 0.95 }}
       animate={{ 
         opacity: 1, 
-        y: [0, -15, 0],
+        y: 0,
         scale: 1 
-      }}
-      transition={{ 
-        opacity: { duration: 0.8, delay: 0.4 },
-        y: { 
-          duration: 6, 
-          repeat: Infinity, 
-          ease: "easeInOut",
-          delay: 0.4
-        },
-        scale: { duration: 0.8, delay: 0.4 }
       }}
       className="w-full max-w-4xl mx-auto group relative"
     >
       <div className="relative">
-        {/* Extreme Blue Neon Drop Shadow */}
-        <div className="absolute -inset-8 bg-neon-blue/20 blur-[60px] rounded-full opacity-50 group-hover:opacity-80 transition-opacity duration-1000" />
+        {/* Blue Neon Drop Shadow - Simplified for mobile */}
+        <div className="absolute -inset-8 bg-neon-blue/10 lg:bg-neon-blue/20 blur-[60px] rounded-full opacity-30 lg:opacity-50 transition-opacity duration-1000" />
         
         <div className="relative">
           <div className="absolute -inset-[1px] bg-gradient-to-r from-neon-blue/30 via-white/10 to-neon-violet/30 rounded-lg opacity-50" />
-          <div className="bg-black/40 backdrop-blur-[12px] rounded-lg p-4 sm:p-6 h-[360px] sm:h-[420px] md:h-[500px] flex flex-col border border-white/5 shadow-2xl relative overflow-hidden">
+          <div className="bg-black/80 lg:bg-black/40 backdrop-blur-sm lg:backdrop-blur-[12px] rounded-lg p-4 sm:p-6 h-[360px] sm:h-[420px] md:h-[500px] flex flex-col border border-white/5 shadow-2xl relative overflow-hidden">
             {/* Glossy reflection effect */}
             <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
             
